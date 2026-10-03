@@ -1,9 +1,7 @@
-fastapi>=0.110.0
-uvicorn[standard]>=0.29.0
-pdfplumber>=0.11.0
-loguru>=0.7.2
-python-dotenv>=1.0.0
-python-multipart>=0.0.9
+# PyTorch cu CUDA 12.1
+torch>=2.1.0
+torchvision>=0.16.0
+--index-url https://download.pytorch.org/whl/cu121
 
 # Diffusers
 diffusers>=0.27.0

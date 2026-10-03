@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PhysiCards — Învață fizica vizual</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Sora:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <base href="/static/" />
+    <link rel="stylesheet" href="css/physicards.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="brand" onclick="go('home')">
+        <i></i><span>PhysiCards</span>
+      </div>
+      <div class="navlinks">
+        <a data-p="home" onclick="go('home')">Acasă</a
+        ><a data-p="domains" onclick="showDomains()">Pe domenii</a
+        ><a data-p="classes" onclick="showClasses()">Clase</a>
+        <a data-p="games3d" onclick="go('games3d')">Jocuri 3D</a>
+      </div>
+      <div style="width: 40px"></div>
+    </nav>
+    <main>
+      <section id="home">
+        <div class="hero">
+          <h1>
+            Bine ai venit!<br />Învață fizica
+            <span class="hl">prin imagini</span>
+          </h1>
+          <p>
+            Flashcard-uri vizuale, formule și desene clare. Alege cum vrei să
+            înveți, fără cont și fără autentificare.
+          </p>
+        </div>
+        <div class="three home-options">
+          <button class="card big" onclick="showDomains()">
+            <div class="ico">🌐</div>
+            <h3>Pe domenii</h3>
+            <p>
+              Toate domeniile fizicii: alegi un domeniu, apoi o subsecțiune, și
+              faci direct flashcard-urile.
+            </p>
+            <div class="go">Explorează domeniile →</div>
+          </button>
+          <button class="card big y" onclick="showClasses()">
+            <div class="ico">📘</div>
+            <h3>Pe clase</h3>
+            <p>
+              Manualele de la clasa a 6-a la a 12-a. Alegi clasa, capitolul și
+              tema.
+            </p>
+            <div class="go">Alege clasa →</div>
+          </button>
+          <button class="card big y" onclick="go('games3d')">
+            <div class="ico">🎮</div>
+            <h3>Jocuri 3D</h3>
+            <p>
+              Învață fizica prin experimente interactive. Asamblează circuite și
+              explorează mișcarea particulelor în laboratoarele 3D.
+            </p>
+            <div class="go">Explorează jocurile →</div>
+          </button>
+          <button class="card big" onclick="go('upload')">
+            <div class="ico">⬆️</div>
+            <h3>Încarcă un PDF</h3>
+            <p>
+              Adaugă propriul manual, iar conținutul lui este structurat pe
+              capitole și teme.
+            </p>
+            <div class="go">Încarcă documentul →</div>
+          </button>
+        </div>
+        <div class="sec">
+          <h2>Întrebări frecvente</h2>
+          <p>Cum folosești aplicația, pe scurt.</p>
+        </div>
+        <div class="faq" id="faq"></div>
+      </section>
+      <section id="domains" class="hidden">
+        <div class="crumb">Pe domenii</div>
+        <div class="ptitle">
+          <h2>Domeniile fizicii</h2>
+          <p>Alege un domeniu ca să vezi subsecțiunile lui.</p>
+        </div>
+        <div class="grid" id="dGrid"></div>
+      </section>
+      <section id="subs" class="hidden">
+        <button class="back" onclick="showDomains()">← Domenii</button>
+        <div class="crumb" id="sCrumb"></div>
+        <div class="ptitle">
+          <h2 id="sTitle"></h2>
+          <p>Alege o subsecțiune ca să deschizi flashcard-urile ei.</p>
+        </div>
+        <div class="grid g3" id="sGrid"></div>
+      </section>
+      <section id="classes" class="hidden">
+        <div class="crumb">Clase</div>
+        <div class="ptitle">
+          <h2>Alege clasa</h2>
+          <p>Manualele de fizică, de la clasa a 6-a la a 12-a.</p>
+        </div>
+        <div class="chips" id="chips"></div>
+        <div id="cBody"></div>
+      </section>
+      <section id="study" class="hidden study">
+        <button class="back" onclick="backFn()">← Înapoi</button>
+        <div class="crumb" id="stCrumb"></div>
+        <div id="deck">
+          <div class="shead">
+            <h2 id="stTitle"></h2>
+            <div class="counter" id="cnt"></div>
+          </div>
+          <div class="pline"><span id="pr"></span></div>
+          <div class="fw">
+            <div class="flash" id="fl" onclick="this.classList.toggle('flip')">
+              <div class="face">
+                <span class="ftag" id="tg"></span>
+                <h2 id="qq"></h2>
+                <div class="art" id="art"></div>
+                <div class="tap">Apasă pe card ca să vezi răspunsul ↻</div>
+              </div>
+              <div class="face bk">
+                <span class="ftag">RĂSPUNS</span>
+                <div class="fbox" id="ff"></div>
+                <div class="expl" id="ee"></div>
+                <div class="mini" id="mm"></div>
+              </div>
+            </div>
+          </div>
+          <div class="rates">
+            <button class="rate r1" onclick="rate(0)">✕ Nu știu</button
+            ><button class="rate r3" onclick="rate(2)">✓ Știu</button>
+          </div>
+          <div class="card more hidden" id="more"></div>
+        </div>
+        <div id="res" class="card result hidden"></div>
+      </section>
+      <section id="theme" class="hidden">
+        <button class="back" onclick="showClasses()">← Capitole</button>
+        <div class="crumb" id="thCrumb"></div>
+        <div class="ptitle">
+          <h2 id="thTitle" style="font-size: 28px"></h2>
+          <p>
+            Conținutul acestei teme este folosit pentru flashcard-uri, quiz-uri
+            și jocurile disponibile.
+          </p>
+        </div>
+        <div class="grid g3" id="thGrid"></div>
+      </section>
+      <section id="formula" class="hidden study">
+        <button class="back" onclick="backFn()">← Înapoi</button>
+        <div class="crumb">Jocuri › <b>Construiește formula</b></div>
+        <div id="fBody">
+          <div class="shead">
+            <h2 id="fmN"></h2>
+            <div class="counter" id="fCnt"></div>
+          </div>
+          <p class="mut" style="margin-top: 6px">
+            Trage piesele (sau apasă pe ele) în ordinea corectă.
+          </p>
+          <div class="card" style="padding: 14px 20px 20px; margin-top: 18px">
+            <div class="slots" id="fSlots"></div>
+            <div class="pcs" id="fPcs"></div>
+            <p
+              id="fMsg"
+              class="b"
+              style="
+                text-align: center;
+                margin-top: 14px;
+                min-height: 24px;
+                font-weight: 600;
+              "
+            ></p>
+          </div>
+        </div>
+        <div class="card result hidden" id="fRes"></div>
+      </section>
+      <section id="duel" class="hidden study">
+        <button class="back" onclick="backFn()">← Înapoi</button>
+        <div class="crumb">Jocuri › <b>Duel pe același ecran</b></div>
+        <div id="dSetup" class="card" style="padding: 30px">
+          <h2 style="font-size: 26px">Duel</h2>
+          <p class="mut" style="margin: 8px 0 20px">
+            Doi jucători, același ecran, întrebări din tema aleasă. Răspundeți
+            pe rând.
+          </p>
+          <div class="pl">
+            <input
+              id="p1"
+              class="inp"
+              placeholder="Jucător 1"
+              maxlength="16"
+            /><input
+              id="p2"
+              class="inp"
+              placeholder="Jucător 2"
+              maxlength="16"
+            />
+          </div>
+          <button class="btn" onclick="startD()">Începe duelul →</button>
+        </div>
+        <div id="dPlay" class="hidden">
+          <div id="dGame">
+            <div class="pl" id="dBoard"></div>
+            <div class="card" style="padding: 24px" id="dQ"></div>
+          </div>
+          <div id="dEnd" class="card result hidden"></div>
+        </div>
+      </section>
+      <section id="atom" class="hidden study" style="max-width: 860px">
+        <button class="back" onclick="backFn()">← Înapoi</button>
+        <div class="crumb">Jocuri › <b>Asamblează atomul 3D</b></div>
+        <div class="shead">
+          <h2 id="aT"></h2>
+          <div class="counter">trage pentru a roti</div>
+        </div>
+        <div class="card" style="margin-top: 16px; overflow: hidden">
+          <div id="aV" class="v3d"></div>
+        </div>
+        <div class="card" style="padding: 20px 24px; margin-top: 14px">
+          <p id="aM" style="font-size: 17px; margin-bottom: 14px"></p>
+          <div class="arow">
+            <span class="dot" style="background: #f6c445"></span><b>Proton</b
+            ><button onclick="aAdd('p', -1)">−</button
+            ><span class="n" id="a_p">0</span
+            ><button onclick="aAdd('p', 1)">+</button>
+          </div>
+          <div class="arow">
+            <span class="dot" style="background: #afc4e6"></span><b>Neutron</b
+            ><button onclick="aAdd('n', -1)">−</button
+            ><span class="n" id="a_n">0</span
+            ><button onclick="aAdd('n', 1)">+</button>
+          </div>
+          <div class="arow">
+            <span class="dot" style="background: #0b2545"></span><b>Electron</b
+            ><button onclick="aAdd('e', -1)">−</button
+            ><span class="n" id="a_e">0</span
+            ><button onclick="aAdd('e', 1)">+</button>
+          </div>
+          <div class="msg">
+            <div id="aI"></div>
+            <div id="aF" style="margin-top: 6px; font-weight: 600"></div>
+          </div>
+          <button class="btn" style="margin-top: 10px" onclick="aCheck()">
+            Verifică
+          </button>
+        </div>
+      </section>
+      <section id="balance" class="hidden study" style="max-width: 860px">
+        <button class="back" onclick="backFn()">← Înapoi</button>
+        <div class="crumb">Jocuri › <b>Balanța cu momente 3D</b></div>
+        <div class="shead">
+          <h2 id="bT"></h2>
+          <div class="counter" id="bC"></div>
+        </div>
+        <p class="mut" id="bP" style="margin-top: 6px"></p>
+        <div class="card" style="margin-top: 14px; overflow: hidden">
+          <div id="bV" class="v3d" style="height: 320px; cursor: default"></div>
+        </div>
+        <div class="card" style="padding: 18px 22px; margin-top: 14px">
+          <div class="bgrid">
+            <div>
+              <b style="font-weight: 600">Stânga</b>
+              <div class="srow" id="bL"></div>
+            </div>
+            <div>
+              <b style="font-weight: 600">Dreapta</b>
+              <div class="srow" id="bR"></div>
+            </div>
+          </div>
+          <div class="msg">
+            <div id="bI"></div>
+            <div class="mut" style="margin-top: 4px; font-size: 13px">
+              Echilibru: F₁·d₁ + … = F₂·d₂ + …, cu F = m·g, g = 10 N/kg. Apasă
+              pe un loc ca să schimbi greutatea.
+            </div>
+          </div>
+          <button class="btn" onclick="bNew()">Misiune nouă</button>
+          <button class="back" style="margin: 0 0 0 8px" onclick="bFree()">
+            Mod liber
+          </button>
+        </div>
+      </section>
+      <section id="ex" class="hidden study">
+        <button class="back" onclick="backFn()">← Înapoi</button>
+        <div class="crumb">Jocuri › <b>Exerciții din manual</b></div>
+        <div id="xMain">
+          <div class="shead">
+            <h2>Exerciții din manual</h2>
+            <div class="counter" id="xCnt"></div>
+          </div>
+          <p
+            class="mut"
+            id="xSrc"
+            style="margin: 6px 0 16px; font-size: 14px"
+          ></p>
+          <div class="card" style="padding: 26px">
+            <div id="xBody"></div>
+            <p
+              id="xMsg"
+              style="min-height: 24px; margin-top: 14px; font-weight: 600"
+            ></p>
+            <button class="btn hidden" id="xNext" onclick="xNext()">
+              Continuă →
+            </button>
+          </div>
+        </div>
+        <div class="card result hidden" id="xRes"></div>
+      </section>
+      <section id="upload" class="hidden">
+        <div class="crumb">Încarcă</div>
+        <div class="ptitle">
+          <h2>Încarcă manualul tău</h2>
+          <p>Adaugă un PDF și transformăm definițiile în carduri vizuale.</p>
+        </div>
+        <div class="drop">
+          <div class="ico">📄</div>
+          <h3 id="fn" style="font-size: 22px">Alege un fișier PDF</h3>
+          <p class="mut" style="margin: 8px 0 22px; font-size: 14px">
+            Până la 50 MB · PDF cu text selectabil
+          </p>
+          <label class="btn" style="cursor: pointer; display: inline-block"
+            >Alege fișier<input
+              type="file"
+              id="pdfInput"
+              accept="application/pdf"
+              hidden
+              onchange="up(this.files[0]);this.value=''"
+          /></label>
+        </div>
+        <div class="upload-options">
+          <label>Pagini de omis la început
+            <input id="skipPages" type="number" min="0" value="0" />
+          </label>
+          <label>Fragmente de analizat (gol = toate)
+            <input id="limitChunks" type="number" min="1" placeholder="Toate" />
+          </label>
+          <label>Maximum de carduri
+            <input id="limitCards" type="number" min="1" max="100" value="20" />
+          </label>
+        </div>
+        <div class="steps" id="stp">
+          <span><i></i>Trimis</span><span><i></i>Definiții extrase</span
+          ><span><i></i>Carduri generate</span><span><i></i>Gata</span>
+        </div>
+        <p class="mut" id="upn" role="status" aria-live="polite" style="margin-top: 18px; font-size: 14px"></p>
+        <div id="uploadResults" class="hidden">
+          <div class="upload-actions">
+            <button class="btn" onclick="studyGeneratedCards()">Învață cu aceste carduri →</button>
+            <a id="generatedPreview" class="back" target="_blank" rel="noopener">Deschide toate cardurile ↗</a>
+          </div>
+          <div id="generatedCards" class="grid g3"></div>
+        </div>
+      </section>
+      <section id="games3d" class="hidden">
+        <div class="crumb">Jocuri 3D</div>
+        <div class="ptitle">
+          <h2>Învață prin experimente 3D</h2>
+          <p>
+            Alege un atelier, construiește și observă cum funcționează fizica.
+          </p>
+        </div>
+        <div class="grid g3">
+          <button class="card tile" onclick="openCircuitWorkshop()">
+            <div class="e">⚡</div>
+            <h3>Atelier de circuit 3D</h3>
+            <p>
+              Asamblează circuite în serie, paralel și mixte. Urmărește curentul
+              și compară lumina becurilor.
+            </p>
+            <div class="go">Deschide atelierul →</div>
+          </button>
+          <button class="card tile" onclick="openParticleWorkshop()">
+            <div class="e">🔬</div>
+            <h3>Laboratorul particulelor 3D</h3>
+            <p>
+              Explorează solidul, lichidul și gazul. Modifică temperatura și
+              urmărește mișcarea particulelor.
+            </p>
+            <div class="go">Deschide laboratorul →</div>
+          </button>
+          <button class="card tile" onclick="openNatureWorkshop('gravity')">
+            <div class="e">🪐</div>
+            <h3>Saltul astronautului</h3>
+            <p>
+              Testează saltul astronautului pe cele opt planete și pe Lună.
+              Compară înălțimea și timpul până la aterizare.
+            </p>
+            <div class="go">Explorează gravitația →</div>
+          </button>
+          <button class="card tile" onclick="openNatureWorkshop('eclipse')">
+            <div class="e">🌘</div>
+            <h3>Cum apar eclipsele?</h3>
+            <p>
+              Mută Luna, aliniază corpurile cerești și descoperă eclipsele de
+              Soare și de Lună.
+            </p>
+            <div class="go">Explorează eclipsele →</div>
+          </button>
+          <button class="card tile" onclick="openNatureWorkshop('day')">
+            <div class="e">🌍</div>
+            <h3>Zi și noapte</h3>
+            <p>
+              Rotește Pământul și urmărește un oraș care trece din lumină în
+              întuneric.
+            </p>
+            <div class="go">Explorează rotația →</div>
+          </button>
+        </div>
+      </section>
+      <section id="circuitWorkshop" class="hidden">
+        <button class="back" onclick="go('games3d')">← Jocuri 3D</button>
+        <iframe
+          id="circuitFrame"
+          title="Atelier de circuit 3D"
+          data-src="games/atelier_circuit_3d.html"
+        ></iframe>
+      </section>
+      <section id="particleWorkshop" class="hidden">
+        <button class="back" onclick="go('games3d')">← Jocuri 3D</button>
+        <iframe
+          id="particleFrame"
+          class="workshop-frame"
+          title="Laboratorul particulelor 3D"
+          data-src="games/particule_3d.html"
+        ></iframe>
+      </section>
+      <section id="natureWorkshop" class="hidden">
+        <button class="back" onclick="go('games3d')">← Jocuri 3D</button>
+        <iframe
+          id="natureFrame"
+          class="workshop-frame"
+          title="Experimente astronomice 3D"
+        ></iframe>
+      </section>
+    </main>
+    <script src="js/helpers.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/flashcards.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/games.js"></script>
+    <script src="js/exercises.js"></script>
+    <script src="js/physicards.js"></script>
+  </body>
+</html>

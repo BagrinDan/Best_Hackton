@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PhysiCards · Laboratorul particulelor 3D</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Sora:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="particule_3d.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Laboratorul particulelor 3D</h1>
+        <span class="muted">Descoperă materia în mișcare</span>
+      </div>
+      <nav aria-label="Stare de agregare">
+        <button data-phase="solid">Solid</button
+        ><button data-phase="liquid">Lichid</button
+        ><button data-phase="gas">Gaz</button>
+      </nav>
+    </header>
+    <main>
+      <section class="stage panel">
+        <div id="view">
+          <div class="overlay">
+            <span id="phaseLabel"></span><span id="renderLabel">Scenă 3D</span>
+          </div>
+        </div>
+        <div class="toolbar">
+          <button id="pause">⏸ Pauză</button
+          ><button id="reset">Repornește particulele</button
+          ><button id="camera">Vedere inițială</button
+          ><label
+            ><input id="trails" type="checkbox" checked /> Urmărește particula
+            galbenă</label
+          >
+        </div>
+        <p class="muted hint">
+          Trage pentru rotire · Rotița pentru zoom · Particula galbenă
+          evidențiază un singur traseu.
+        </p>
+      </section>
+      <aside class="panel">
+        <h2 id="phaseTitle"></h2>
+        <p id="explanation"></p>
+        <label for="temperature"
+          >Temperatură: <strong id="temperatureValue"></strong
+        ></label>
+        <input
+          id="temperature"
+          type="range"
+          min="100"
+          max="600"
+          value="300"
+          step="10"
+        />
+        <div class="metrics">
+          <div>Particule<strong>64</strong></div>
+          <div>Viteză relativă<strong id="speed"></strong></div>
+        </div>
+        <p class="muted" id="observation"></p>
+        <section class="mission">
+          <span id="missionCount" class="muted"></span>
+          <h2 id="missionTitle"></h2>
+          <p id="missionText"></p>
+          <div id="answers"></div>
+          <button id="next" hidden>Următoarea misiune →</button>
+          <div id="feedback" role="status" aria-live="polite">
+            Alege o stare și observă particulele.
+          </div>
+        </section>
+        <details>
+          <summary>Ce reprezintă această simulare?</summary>
+          <p>
+            Model schematic: solidul vibrează în jurul unor poziții fixe;
+            lichidul are particule apropiate care își schimbă vecinii; gazul se
+            deplasează prin recipient și se reflectă la pereți. Toate
+            particulele reprezintă aceeași substanță imaginară.
+          </p>
+          <p>
+            Temperatura este în kelvini. Viteza caracteristică variază cu √T;
+            amplitudinea vibrațiilor crește la încălzire. Selectarea stării este
+            manuală: nu sunt simulate pragurile de topire/fierbere, presiunea
+            sau forțele moleculare reale. Dimensiunile și vitezele sunt
+            ilustrative.
+          </p>
+        </details>
+      </aside>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="particule_3d.js"></script>
+  </body>
+</html>

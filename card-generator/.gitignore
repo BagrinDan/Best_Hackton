@@ -1,0 +1,6 @@
+.env
+cards/
+cache/
+venv/
+__pycache__/
+*.pyc

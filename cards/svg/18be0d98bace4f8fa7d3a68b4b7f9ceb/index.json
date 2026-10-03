@@ -1,0 +1,170 @@
+[
+  {
+    "term": "Antichitate",
+    "definition": "Acestea au fost prezentate în lucrările „Optica” și „Catoptica”, ce aparțin lui Euclide, unul dintre cei mai mari filosofi ai Greciei antice, care a trait în secolul III î. Hr.",
+    "quote": "Antichitate. Acestea au fost prezentate în lucrările „Optica” și „Catoptica”, ce aparțin lui Euclide, unul dintre cei mai mari filosofi ai Greciei antice, care a trait în secolul III î. Hr.",
+    "page": 8,
+    "image": "antichitate-060065c472a8.svg",
+    "illustration": "antichitate-060065c472a8-illustration.svg",
+    "question": "Ce au prezentat lucrările 'Optica' și 'Catoptica' lui Euclide?",
+    "short_answer": "Antichitate",
+    "explanation": "Lucrările 'Optica' și 'Catoptica' lui Euclide au prezentat principii fundamentale ale antichității.",
+    "visual_plan": {
+      "layout": "simplu",
+      "question": "Ce au prezentat lucrările 'Optica' și 'Catoptica' lui Euclide?",
+      "short_answer": "Antichitate",
+      "subtipo": "",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "Euclide",
+          "nume": "Euclid",
+          "reprezentare": "figură cu un cimbru și o legătură",
+          "emoji": "🎓💡",
+          "culoare": "#FFD700"
+        },
+        {
+          "simbol": "Optica",
+          "nume": "Optica",
+          "reprezentare": "un microscop",
+          "emoji": "🔬🔍",
+          "culoare": "#87CEEB"
+        },
+        {
+          "simbol": "Catoptica",
+          "nume": "Catoptica",
+          "reprezentare": "un reflector",
+          "emoji": " gương",
+          "culoare": "#FF6347"
+        }
+      ],
+      "operatori": [],
+      "explicatie_vizuala": "Lucrările 'Optica' și 'Catoptica' lui Euclide au prezentat principii fundamentale ale antichității.",
+      "concept": "Antichitate",
+      "definitie_scurta": "Acestea au fost prezentate în lucrările „Optica” și „Catoptica”, ce aparțin lui Euclide, unul dintre cei mai mari filosofi ai Greciei antice, care a trait în secolul III î. Hr."
+    }
+  },
+  {
+    "term": "reflexie",
+    "definition": "Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine se numește reflexie a luminii.",
+    "quote": "Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine se numește reflexie a luminii.",
+    "page": 8,
+    "image": "reflexie-3771ef58b692.svg",
+    "illustration": "reflexie-3771ef58b692-illustration.svg",
+    "question": "Ce este reflexia și cum funcționează?",
+    "short_answer": "Schimbarea direcției luminii la întâlnirea cu o suprafață.",
+    "explanation": "Reprezintă schimbarea direcției luminii la întâlnirea cu o suprafață, formând un unghi de reflexie.",
+    "visual_plan": {
+      "layout": "geometric",
+      "question": "Ce este reflexia și cum funcționează?",
+      "short_answer": "Schimbarea direcției luminii la întâlnirea cu o suprafață.",
+      "subtipo": "reflexie",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "L1",
+          "nume": "Lumină prima",
+          "reprezentare": "Linie continuă",
+          "emoji": "💡➡️",
+          "culoare": "#FFD700"
+        },
+        {
+          "simbol": "S",
+          "nume": "Suprafață",
+          "reprezentare": "Linie curată",
+          "emoji": "🪞",
+          "culoare": "#8B4513"
+        },
+        {
+          "simbol": "L2",
+          "nume": "Lumină reflectată",
+          "reprezentare": "Linie continuă",
+          "emoji": "➡️💡",
+          "culoare": "#FFD700"
+        }
+      ],
+      "operatori": [
+        "➡️"
+      ],
+      "explicatie_vizuala": "Reprezintă schimbarea direcției luminii la întâlnirea cu o suprafață, formând un unghi de reflexie.",
+      "concept": "reflexie",
+      "definitie_scurta": "Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine se numește reflexie a luminii."
+    }
+  },
+  {
+    "term": "oglindă plană",
+    "definition": "Suprafața plană, netedă și lucioasă care reflectă bine lumina se numește oglindă plană.",
+    "quote": "Suprafața plană, netedă și lucioasă care reflectă bine lumina se numește oglindă plană.",
+    "page": 8,
+    "image": "oglinda_plana-538aee5690c8.svg",
+    "illustration": "oglinda_plana-538aee5690c8-illustration.svg",
+    "question": "Ce este o oglindă plană?",
+    "short_answer": "O suprafață netedă și lucioasă care reflectă bine lumina.",
+    "explanation": "O oglindă plană este o suprafață netedă și lucioasă care reflectă bine lumina. Este utilizată pentru a refleca imagini și obiecte.",
+    "visual_plan": {
+      "layout": "simplu",
+      "question": "Ce este o oglindă plană?",
+      "short_answer": "O suprafață netedă și lucioasă care reflectă bine lumina.",
+      "subtipo": "",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "O",
+          "nume": "Oglindă plană",
+          "reprezentare": "O suprafață netedă și lucioasă",
+          "emoji": "🪞",
+          "culoare": "#FFFFFF"
+        }
+      ],
+      "operatori": [],
+      "explicatie_vizuala": "O oglindă plană este o suprafață netedă și lucioasă care reflectă bine lumina. Este utilizată pentru a refleca imagini și obiecte.",
+      "concept": "oglindă plană",
+      "definitie_scurta": "Suprafața plană, netedă și lucioasă care reflectă bine lumina se numește oglindă plană."
+    }
+  },
+  {
+    "term": "imagine virtuală",
+    "definition": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate se numește imagine virtuală.",
+    "quote": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate se numește imagine virtuală.",
+    "page": 10,
+    "image": "imagine_virtuala-b5b570dd5c1f.svg",
+    "illustration": "imagine_virtuala-b5b570dd5c1f-illustration.svg",
+    "question": "Ce este o imagine virtuală?",
+    "short_answer": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate.",
+    "explanation": "Imaginea virtuală este reprezentată de un punct unde prelungirea razei luminii întâmpină o suprafață reflectorizată, chiar dacă aceasta nu poate fi văzută direct.",
+    "visual_plan": {
+      "layout": "geometric",
+      "question": "Ce este o imagine virtuală?",
+      "short_answer": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate.",
+      "subtipo": "refractie",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "S",
+          "nume": "Raza luminii",
+          "reprezentare": "Linie curată de la punctul sursă la suprafața reflectorului.",
+          "emoji": "💡➡️",
+          "culoare": "#FFD700"
+        },
+        {
+          "simbol": "I",
+          "nume": "Imagine virtuală",
+          "reprezentare": "Punct unde prelungirea razei S întâmpină o suprafață reflectorizată.",
+          "emoji": "📷📍",
+          "culoare": "#00FF00"
+        },
+        {
+          "simbol": "R",
+          "nume": "Suprafață reflectorizată",
+          "reprezentare": "Linie curată de la suprafața reflectorului la imagine virtuală.",
+          "emoji": "➡️📷📍",
+          "culoare": "#0000FF"
+        }
+      ],
+      "operatori": [],
+      "explicatie_vizuala": "Imaginea virtuală este reprezentată de un punct unde prelungirea razei luminii întâmpină o suprafață reflectorizată, chiar dacă aceasta nu poate fi văzută direct.",
+      "concept": "imagine virtuală",
+      "definitie_scurta": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate se numește imagine virtuală."
+    }
+  }
+]

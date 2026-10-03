@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="740" xmlns="http://www.w3.org/2000/svg">
+    
+    <defs>
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFFFFF"/>
+            <stop offset="100%" style="stop-color:#F4F6F8"/>
+        </linearGradient>
+        <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#4A90E2"/>
+            <stop offset="100%" style="stop-color:#7B68EE"/>
+        </linearGradient>
+        <filter id="shadowSmall" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.15"/>
+        </filter>
+    </defs>
+    <rect width="900" height="100%" fill="url(#bgGrad)"/>
+    <rect x="0" y="0" width="900" height="130" fill="url(#headerGrad)"/>
+    <text x="450" y="65" text-anchor="middle" 
+          font-family="Arial, Helvetica, sans-serif" font-size="36" 
+          font-weight="bold" fill="#FFFFFF">
+        reflexie a luminii
+    </text>
+    
+    
+    
+    <defs>
+        <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+            <polygon points="0 0, 10 3, 0 6" fill="#F4A261"/>
+        </marker>
+        <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+            <polygon points="0 0, 10 3, 0 6" fill="#E74C3C"/>
+        </marker>
+    </defs>
+    
+    <!-- Oglinda -->
+    <line x1="170" y1="440" x2="730" y2="440" 
+          stroke="#2C3E50" stroke-width="4"/>
+    <line x1="170" y1="446" x2="730" y2="446" 
+          stroke="#2C3E50" stroke-width="1" stroke-dasharray="8,4"/>
+    <text x="745" y="445" font-family="Arial" font-size="13" fill="#2C3E50">
+        oglindă
+    </text>
+    
+    <!-- Normala -->
+    <line x1="450" y1="440" x2="450" y2="200" 
+          stroke="#7B68EE" stroke-width="3" stroke-dasharray="8,6"/>
+    <text x="462" y="210" font-family="Arial" font-size="14" font-weight="bold" fill="#7B68EE">
+        C
+    </text>
+    <text x="462" y="230" font-family="Arial" font-size="11" fill="#7B68EE">
+        normală
+    </text>
+    
+    <!-- Punct O -->
+    <circle cx="450" cy="440" r="6" fill="#2C3E50"/>
+    <text x="428" y="465" font-family="Arial" font-size="16" font-weight="bold" fill="#2C3E50">
+        O
+    </text>
+    
+    <!-- Raza incidentă -->
+    <line x1="250" y1="260" x2="450" y2="440" 
+          stroke="#F4A261" stroke-width="4" marker-end="url(#arrowOrange)"/>
+    <text x="230" y="250" font-family="Arial" font-size="16" font-weight="bold" fill="#F4A261">
+        A
+    </text>
+    <text x="170" y="340" font-family="Arial" font-size="12" fill="#F4A261">
+        rază incidentă
+    </text>
+    
+    <!-- Raza reflectată -->
+    <line x1="450" y1="440" x2="650" y2="260" 
+          stroke="#E74C3C" stroke-width="4" marker-end="url(#arrowRed)"/>
+    <text x="655" y="250" font-family="Arial" font-size="16" font-weight="bold" fill="#E74C3C">
+        B
+    </text>
+    <text x="600" y="340" font-family="Arial" font-size="12" fill="#E74C3C">
+        rază reflectată
+    </text>
+    
+    <!-- Unghiul α -->
+    <path d="M 450 360 A 80 80 0 0 0 385 385" 
+          fill="none" stroke="#27AE60" stroke-width="2"/>
+    <text x="395" y="370" font-family="Arial" font-size="20" font-weight="bold" fill="#27AE60">
+        α
+    </text>
+    
+    <!-- Unghiul β -->
+    <path d="M 450 360 A 80 80 0 0 1 515 385" 
+          fill="none" stroke="#27AE60" stroke-width="2"/>
+    <text x="485" y="370" font-family="Arial" font-size="20" font-weight="bold" fill="#27AE60">
+        β
+    </text>
+
+    
+    <rect x="50" y="560" width="800" height="50" rx="15" 
+          fill="#E8F4FD" stroke="#4A90E2" stroke-width="2"/>
+    <text x="450" y="592" text-anchor="middle" 
+          font-family="Arial" font-size="14" fill="#1A1A2E">
+        💡 Această diagramă arată schimbarea direcției luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care 
+    </text>
+    <rect x="50" y="625" width="800" height="85" rx="12" 
+          fill="#FFF9E6" stroke="#F4A261" stroke-width="2"/>
+    <text x="450" y="649" text-anchor="middle" 
+          font-family="Arial" font-size="13" font-weight="bold" fill="#E76F51">
+        📖 Definiție
+    </text>
+    <text x="450" y="671" text-anchor="middle" 
+          font-family="Arial" font-size="13" fill="#2C3E50">
+        Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii
+    </text>
+    <text x="450" y="689" text-anchor="middle" 
+          font-family="Arial" font-size="13" fill="#2C3E50">
+        prin întoarcerea ei în mediul din care vine se numește reflexie a luminii.
+    </text>
+</svg>

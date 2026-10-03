@@ -1,6 +1,16 @@
 import uvicorn
+import os
 from fastapi import FastAPI
-from typing import Union
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+from dotenv import load_dotenv
+from pathlib import Path
+
+from app.controllers.card_controller import CARDS_DIR, router as card_router
+
+load_dotenv(Path(__file__).resolve().parents[1] / ".env", override=False)
+
 
 app = FastAPI(
     title="My FastAPI App",
@@ -8,9 +18,23 @@ app = FastAPI(
     version="1.0.0"
 )
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[origin.strip() for origin in os.getenv(
+        "FRONTEND_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000,http://127.0.0.1:3000"
+    ).split(",") if origin.strip()],
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type"],
+)
+CARDS_DIR.mkdir(parents=True, exist_ok=True)
+app.include_router(card_router)
+app.mount("/cards", StaticFiles(directory=CARDS_DIR), name="cards")
+STATIC_DIR = Path(__file__).resolve().parent / "static"
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="frontend")
+
 @app.get("/")
 async def read_root():
-    return {"message": "Hello World"}
+    return FileResponse(STATIC_DIR / "physicards.html")
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=20000, reload=True)
+    uvicorn.run("app.main:app", host="127.0.0.1", port=20000, reload=True)
