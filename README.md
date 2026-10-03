@@ -1,4 +1,4 @@
-# 🧠 Best Minds Hackaton
+# Best Minds Hackaton
 
 | | |
 | :--- | :--- |
@@ -7,7 +7,7 @@
 
 ---
 
-## ✨ Quick describe:
+## Quick describe:
 
 Aplicația este o **platformă educațională** bazată pe utilizarea **cardurilor vizuale** pentru a facilita înțelegerea și memorarea informațiilor. În loc să prezinte definițiile într-o formă exclusiv textuală, aplicația transformă conceptele complexe în reprezentări vizuale simple și ușor de înțeles.
 
@@ -19,7 +19,7 @@ Scopul principal al aplicației este de a transforma procesul tradițional de î
 
 ---
 
-## 🔄 Arhitecture:
+## Arhitecture:
 
 ```text
 Book -> ParsingBook -> CardService -> LLM visual plan -> SVG cards
