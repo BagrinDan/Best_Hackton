@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="698" xmlns="http://www.w3.org/2000/svg">
+    
+    <defs>
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFFFFF"/>
+            <stop offset="100%" style="stop-color:#F4F6F8"/>
+        </linearGradient>
+        <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#4A90E2"/>
+            <stop offset="100%" style="stop-color:#7B68EE"/>
+        </linearGradient>
+        <filter id="shadowSmall" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.15"/>
+        </filter>
+    </defs>
+    <rect width="900" height="100%" fill="url(#bgGrad)"/>
+    <rect x="0" y="0" width="900" height="130" fill="url(#headerGrad)"/>
+    <text x="450" y="65" text-anchor="middle" 
+          font-family="Arial, Helvetica, sans-serif" font-size="36" 
+          font-weight="bold" fill="#FFFFFF">
+        imagine virtuală
+    </text>
+    
+    
+    
+    <circle cx="265.0" cy="290" r="60" fill="#2F5D9B" opacity="0.15"/>
+    <circle cx="265.0" cy="290" r="60" fill="none" stroke="#2F5D9B" stroke-width="3"/>
+    <g transform="translate(265.0 290)" stroke="#2F5D9B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M-15 18C-15 7-29 2-29-15A29 29 0 0 1 29-15C29 2 15 7 15 18Z" fill="#fff1b8"/><path d="M-15 25H15M-12 34H12M0-28V-5M-43-20H-36M36-20H43"/></g>
+    <text x="265.0" y="390" text-anchor="middle" 
+          font-family="Arial" font-size="20" font-weight="bold" fill="#2F5D9B">
+        S
+    </text>
+    <text x="265.0" y="412" text-anchor="middle" 
+          font-family="Arial" font-size="13" fill="#2C3E50">
+        sursă
+    </text>
+    <text x="265.0" y="430" text-anchor="middle" 
+          font-family="Arial" font-size="11" fill="#7F8C8D" font-style="italic">
+        un punct luminos
+    </text>
+    <circle cx="635.0" cy="290" r="60" fill="#D85F4A" opacity="0.15"/>
+    <circle cx="635.0" cy="290" r="60" fill="none" stroke="#D85F4A" stroke-width="3"/>
+    <g transform="translate(635.0 290)" stroke="#D85F4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="-34" y="-30" width="68" height="60" rx="12" fill="#e8effa"/><path d="M-34-12H34M-12-30V30"/></g>
+    <text x="635.0" y="390" text-anchor="middle" 
+          font-family="Arial" font-size="20" font-weight="bold" fill="#D85F4A">
+        I
+    </text>
+    <text x="635.0" y="412" text-anchor="middle" 
+          font-family="Arial" font-size="13" fill="#2C3E50">
+        imagine virtuală
+    </text>
+    <text x="635.0" y="430" text-anchor="middle" 
+          font-family="Arial" font-size="11" fill="#7F8C8D" font-style="italic">
+        traseul imaginii
+    </text>
+    
+    <rect x="50" y="500" width="800" height="68" rx="15"
+          fill="#E8F4FD" stroke="#4A90E2" stroke-width="2"/>
+<text x="450" y="527" text-anchor="middle" font-family="Arial" font-size="14" fill="#1A1A2E">Imaginea virtuală este reprezentată de traseul imaginii obținut la intersecția</text><text x="450" y="548" text-anchor="middle" font-family="Arial" font-size="14" fill="#1A1A2E">prelungirilor raze- S lor reflectate.</text>
+    <rect x="50" y="583" width="800" height="85" rx="12" 
+          fill="#FFF9E6" stroke="#F4A261" stroke-width="2"/>
+    <text x="450" y="607" text-anchor="middle" 
+          font-family="Arial" font-size="13" font-weight="bold" fill="#E76F51">
+        📖 Definiție
+    </text>
+    <text x="450" y="629" text-anchor="middle" 
+          font-family="Arial" font-size="13" fill="#2C3E50">
+        Imaginea obținută la intersecția prelungirilor raze- S lor reflectate se numește imagine
+    </text>
+    <text x="450" y="647" text-anchor="middle" 
+          font-family="Arial" font-size="13" fill="#2C3E50">
+        virtuală.
+    </text>
+</svg>

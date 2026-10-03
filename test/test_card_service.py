@@ -6,7 +6,8 @@ from pathlib import Path
 from unittest.mock import patch
 
 from app.core.parsing_book import ParsingBook
-from app.core.svg_generator import generate_card_svg, generate_illustration_svg
+from app.core.svg_generator import generate_card_svg, generate_illustration_svg, safe_color
+from app.core.physics_visuals import scene_for_term, scene_svg
 from app.services.card_service import CardService, parser_from_environment
 
 
@@ -80,7 +81,35 @@ class CardServiceTests(unittest.TestCase):
         svg = generate_card_svg(plan)
         ET.fromstring(svg)
         self.assertNotIn("onload=", svg)
-        self.assertIn("&lt;script&gt;", svg)
+        self.assertNotIn("<script>", svg)
+
+    def test_vector_scenes_are_valid_and_specific(self):
+        for term, scene in (("Mișcarea mecanică", "motion"), ("Forța de frecare", "friction"),
+                            ("Densitatea", "density"), ("Volumul", "volume"), ("Circuit electric", "circuit")):
+            self.assertEqual(scene_for_term(term), scene)
+            ET.fromstring(scene_svg(scene))
+        self.assertIsNone(scene_for_term("Forța arhimedică"))
+        self.assertNotEqual(safe_color("#FFFFFF"), "#FFFFFF")
+
+    def test_historical_passage_is_filtered(self):
+        parser = ParsingBook()
+        with tempfile.TemporaryDirectory() as directory, patch.object(parser, "_ask", return_value={"is_definition": False}):
+            cards = CardService(parser, directory).generate_cards([
+                {"term": "Antichitate", "definition": "Euclide a trăit în secolul III î. Hr."}
+            ])
+            self.assertEqual(cards, [])
+            self.assertFalse(list(Path(directory).glob("*.svg")))
+
+    def test_invalid_answer_gets_one_repair_attempt(self):
+        bad = dict(visual_plan(), question="Ce este volumul?", short_answer="Volumul", is_definition=True)
+        good = dict(visual_plan(), question="Ce este volumul?", short_answer="Spațiul ocupat de un corp", is_definition=True)
+        parser = ParsingBook()
+        with tempfile.TemporaryDirectory() as directory, patch.object(parser, "_ask", side_effect=[bad, good]) as ask:
+            cards = CardService(parser, directory).generate_cards([
+                {"term": "Volumul", "definition": "Volumul este spațiul ocupat de un corp."}
+            ])
+            self.assertEqual(ask.call_count, 2)
+            self.assertEqual(cards[0]["short_answer"], "Spațiul ocupat de un corp")
 
     def test_all_layouts_generate_valid_xml(self):
         for layout in ("formula", "flow", "geometric", "proprietati", "simplu"):

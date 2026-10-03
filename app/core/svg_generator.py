@@ -3,6 +3,7 @@
 
 import re
 import xml.etree.ElementTree as ET
+from app.core.physics_visuals import icon_svg, scene_for_term, scene_svg
 
 
 PALETTE = ["#4A90E2", "#E74C3C", "#27AE60", "#F4A261", "#7B68EE"]
@@ -82,14 +83,15 @@ def _svg_footer(definitie: str, explicatie: str, width: int, y_start: int) -> tu
     y = y_start
     
     if explicatie:
+        explanation_lines = wrap_text(explicatie, max_chars=85)
+        explanation_height = 26 + len(explanation_lines) * 21
         svg += f'''
-    <rect x="50" y="{y}" width="{width-100}" height="50" rx="15" 
+    <rect x="50" y="{y}" width="{width-100}" height="{explanation_height}" rx="15"
           fill="#E8F4FD" stroke="#4A90E2" stroke-width="2"/>
-    <text x="{width//2}" y="{y + 32}" text-anchor="middle" 
-          font-family="Arial" font-size="14" fill="#1A1A2E">
-        💡 {escape_xml(explicatie[:130])}
-    </text>'''
-        y += 65
+'''
+        for i, line in enumerate(explanation_lines):
+            svg += f'<text x="{width//2}" y="{y + 27 + i * 21}" text-anchor="middle" font-family="Arial" font-size="14" fill="#1A1A2E">{escape_xml(line)}</text>'
+        y += explanation_height + 15
     
     if definitie:
         lines = wrap_text(definitie, max_chars=95)
@@ -116,15 +118,13 @@ def _element_big_emoji(x: int, y: int, elem: dict, radius: int = 60, index: int 
     """Element cu EMOJI MARE în cerc + simbol mic dedesubt."""
     culoare = safe_color(elem.get("culoare"), index)
     simbol = elem.get("simbol", "?")[:4]
-    emoji = elem.get("emoji", "❓")
     nume = elem.get("nume", "")[:20]
     reprezentare = elem.get("reprezentare", "")[:30]
     
     return f'''
     <circle cx="{x}" cy="{y}" r="{radius}" fill="{culoare}" opacity="0.15"/>
     <circle cx="{x}" cy="{y}" r="{radius}" fill="none" stroke="{culoare}" stroke-width="3"/>
-    <text x="{x}" y="{y + 20}" text-anchor="middle" font-size="64" 
-          font-family="{EMOJI_FONT}">{escape_xml(emoji)}</text>
+    {icon_svg(elem, x, y, culoare)}
     <text x="{x}" y="{y + 100}" text-anchor="middle" 
           font-family="Arial" font-size="20" font-weight="bold" fill="{culoare}">
         {escape_xml(simbol)}
@@ -143,7 +143,7 @@ def _svg_formula(data: dict) -> str:
     concept = data.get("concept", "")[:50]
     formula = (data.get("formula") or "")[:40]
     definitie = data.get("definitie_scurta", data.get("explicatie_vizuala", ""))
-    explicatie = data.get("explicatie_vizuala", "")[:130]
+    explicatie = data.get("explicatie_vizuala", "")
     elemente = data.get("elemente", [])[:4]
     operatori = data.get("operatori", [])
     
@@ -184,7 +184,7 @@ def _svg_formula(data: dict) -> str:
 def _svg_flow(data: dict) -> str:
     concept = data.get("concept", "")[:50]
     definitie = data.get("definitie_scurta", "")
-    explicatie = data.get("explicatie_vizuala", "")[:130]
+    explicatie = data.get("explicatie_vizuala", "")
     elemente = data.get("elemente", [])[:5]
     
     width = 900
@@ -230,7 +230,7 @@ def _svg_geometric(data: dict) -> str:
     subtipo = data.get("subtipo", "reflexie")
     concept = data.get("concept", "")[:50]
     definitie = data.get("definitie_scurta", "")
-    explicatie = data.get("explicatie_vizuala", "")[:130]
+    explicatie = data.get("explicatie_vizuala", "")
     
     width = 900
     
@@ -547,7 +547,7 @@ def _svg_unghi_reflexie(concept, definitie, explicatie, width=900) -> str:
 def _svg_proprietati(data: dict) -> str:
     concept = data.get("concept", "")[:50]
     definitie = data.get("definitie_scurta", "")
-    explicatie = data.get("explicatie_vizuala", "")[:130]
+    explicatie = data.get("explicatie_vizuala", "")
     elemente = data.get("elemente", [])[:4]
     
     width = 900
@@ -558,8 +558,7 @@ def _svg_proprietati(data: dict) -> str:
     main_svg = f'''
     <circle cx="{width//2}" cy="210" r="65" fill="#7B68EE" opacity="0.15"/>
     <circle cx="{width//2}" cy="210" r="65" fill="none" stroke="#7B68EE" stroke-width="3"/>
-    <text x="{width//2}" y="235" text-anchor="middle" font-size="60" 
-          font-family="{EMOJI_FONT}">🪞</text>
+    {icon_svg({"nume": concept}, width // 2, 210, "#2f5d9b")}
 '''
     
     y_grid = 320
@@ -582,8 +581,7 @@ def _svg_proprietati(data: dict) -> str:
           width="{card_w - 60}" height="{card_h}" rx="15" 
           fill="{culoare}" opacity="0.1" 
           stroke="{culoare}" stroke-width="2"/>
-    <text x="{x - 40}" y="{y + 18}" text-anchor="middle" 
-          font-size="48" font-family="{EMOJI_FONT}">{escape_xml(emoji)}</text>
+    <g transform="translate({x - 40} {y}) scale(.6)">{icon_svg(elem, 0, 0, culoare)}</g>
     <text x="{x + 40}" y="{y - 10}" text-anchor="middle" 
           font-family="Arial" font-size="18" font-weight="bold" fill="{culoare}">
         {escape_xml(nume)}
@@ -608,7 +606,7 @@ def _svg_proprietati(data: dict) -> str:
 def _svg_simplu(data: dict) -> str:
     concept = data.get("concept", "")[:50]
     definitie = data.get("definitie_scurta", "")
-    explicatie = data.get("explicatie_vizuala", "")[:130]
+    explicatie = data.get("explicatie_vizuala", "")
     elemente = data.get("elemente", [])[:4]
     
     width = 900
@@ -654,11 +652,20 @@ def generate_card_svg(data: dict) -> str:
 
 def safe_color(value, index=0):
     """Only accept hex colors in SVG attributes."""
-    return value if isinstance(value, str) and re.fullmatch(r"#[0-9a-fA-F]{6}", value) else PALETTE[index % len(PALETTE)]
+    if isinstance(value, str) and re.fullmatch(r"#[0-9a-fA-F]{6}", value):
+        channels = [int(value[i:i+2], 16) / 255 for i in (1, 3, 5)]
+        linear = [c / 12.92 if c <= .04045 else ((c + .055) / 1.055) ** 2.4 for c in channels]
+        luminance = sum(c * w for c, w in zip(linear, (.2126, .7152, .0722)))
+        if 1.05 / (luminance + .05) >= 3:
+            return value
+    return ("#2F5D9B", "#D85F4A", "#278467", "#A77920")[index % 4]
 
 
 def generate_illustration_svg(data: dict) -> str:
     """Render only the diagram for a study card, without its answer and footer."""
+    scene = scene_for_term(data.get("concept", ""))
+    if scene and data.get("layout") != "geometric":
+        return scene_svg(scene)
     plan = dict(data, concept="", formula="", definitie_scurta="", explicatie_vizuala="")
     if not plan.get("elemente") and plan.get("layout") != "geometric":
         plan["layout"] = "simplu"

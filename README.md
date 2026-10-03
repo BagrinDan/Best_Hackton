@@ -76,6 +76,12 @@ Generated study cards show a question and illustration on the front, and a short
 answer with a smaller illustration on the back. “Nu știu” opens the full source
 definition and explanation below the card. Upload again to generate the new
 question/answer fields and illustration files for older batches.
+The renderer uses vector icons and schematic diagrams for motion, friction,
+density, volume, force, and circuits. It retains dedicated optics diagrams.
+Visual plans get one repair attempt when they fail validation or repeat the
+term as the answer. Passages the LLM identifies as historical notes or other
+non-definitions are excluded; this semantic check still depends on the model.
+Source definitions remain available in full, and long SVG explanations wrap.
 Generation may take several minutes; the upload controls remain disabled while
 the request is running. No separate `http.server` process is required.
 Local frontend origins on ports 5173 and 3000 are allowed; customize the
