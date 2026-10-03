@@ -2,3 +2,17 @@ fastapi>=0.110.0
 uvicorn[standard]>=0.29.0
 pdfplumber>=0.11.0
 loguru>=0.7.2
+python-dotenv>=1.0.0
+python-multipart>=0.0.9
+
+# Diffusers
+diffusers>=0.27.0
+transformers>=4.38.0
+accelerate>=0.27.0
+safetensors>=0.4.0
+
+# Opțional (recomandat pentru viteză)
+xformers>=0.0.24
+
+# Pentru manipulare imagini
+pillow>=10.0.0

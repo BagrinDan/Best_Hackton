@@ -1,0 +1,125 @@
+[
+  {
+    "term": "reflexie a luminii",
+    "definition": "Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine se numește reflexie a luminii.",
+    "quote": "Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine se numește reflexie a luminii.",
+    "page": 6,
+    "image": "reflexie_a_luminii-504fb199ddfc.svg",
+    "explanation": "Această diagramă arată schimbarea direcției luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine, ceea ce se numește reflexie a luminii.",
+    "visual_plan": {
+      "layout": "geometric",
+      "subtipo": "reflexie",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "L",
+          "nume": "lumină",
+          "reprezentare": "Linie curată care reprezintă direcția luminii.",
+          "emoji": "💡",
+          "culoare": "#FFD700"
+        },
+        {
+          "simbol": "S",
+          "nume": "suprafață de separație",
+          "reprezentare": "Linie curată care reprezintă suprafața unde lumină se întoarce.",
+          "emoji": "👋",
+          "culoare": "#87CEEB"
+        },
+        {
+          "simbol": "L'",
+          "nume": "lumină reflextată",
+          "reprezentare": "Linie curată care reprezintă direcția luminii după reflexie.",
+          "emoji": "💡",
+          "culoare": "#FFD700"
+        }
+      ],
+      "operatori": [
+        "→",
+        "←"
+      ],
+      "explicatie_vizuala": "Această diagramă arată schimbarea direcției luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine, ceea ce se numește reflexie a luminii.",
+      "concept": "reflexie a luminii",
+      "definitie_scurta": "Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine se numește reflexie a luminii."
+    }
+  },
+  {
+    "term": "oglindă plană",
+    "definition": "Suprafața plană, netedă și lucioasă care reflectă bine lumina se numește oglindă plană.",
+    "quote": "Suprafața plană, netedă și lucioasă care reflectă bine lumina se numește oglindă plană.",
+    "page": 6,
+    "image": "oglinda_plana-54b864e6027c.svg",
+    "explanation": "Oglinda plană este o suprafață netedă și lucioasă care reflectă bine lumina. Luminozitatea (L) se reflecțiază de această suprafață.",
+    "visual_plan": {
+      "layout": "simplu",
+      "subtipo": "",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "O",
+          "nume": "Oglindă Plană",
+          "reprezentare": "O suprafață plană, netedă și lucioasă",
+          "emoji": "🪞",
+          "culoare": "#FFFFFF"
+        },
+        {
+          "simbol": "L",
+          "nume": "Luminozitate",
+          "reprezentare": "Un răspuns de luminozitate care se reflectă",
+          "emoji": "💡",
+          "culoare": "#FFFF00"
+        }
+      ],
+      "operatori": [],
+      "explicatie_vizuala": "Oglinda plană este o suprafață netedă și lucioasă care reflectă bine lumina. Luminozitatea (L) se reflecțiază de această suprafață.",
+      "concept": "oglindă plană",
+      "definitie_scurta": "Suprafața plană, netedă și lucioasă care reflectă bine lumina se numește oglindă plană."
+    }
+  },
+  {
+    "term": "imagine virtuală",
+    "definition": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate.",
+    "quote": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate se numește imagine virtuală.",
+    "page": 9,
+    "image": "imagine_virtuala-86d0d2c11fc8.svg",
+    "explanation": "Imaginea virtuală este formată de intersecția prelungirilor raze- S lor reflectate. Rază incidentă (r1) se întâlneste cu surfața reflectantă (S), este reflextată ca rază reflectată (r2) și această rază reflectată se extinde până la formarea imaginei virtuale (I).",
+    "visual_plan": {
+      "layout": "simplu",
+      "subtipo": "",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "S",
+          "nume": "Surfață reflectantă",
+          "reprezentare": "un dreptunghi cu o față reflectantă",
+          "emoji": "🪞",
+          "culoare": "#FFFFFF"
+        },
+        {
+          "simbol": "r1",
+          "nume": "Rază incidentă",
+          "reprezentare": "o linie care se întâlneste cu S",
+          "emoji": "➡️",
+          "culoare": "#0000FF"
+        },
+        {
+          "simbol": "r2",
+          "nume": "Rază reflectată",
+          "reprezentare": "o linie care se întâlneste cu S și este reflextată",
+          "emoji": "➡️",
+          "culoare": "#FF0000"
+        },
+        {
+          "simbol": "I",
+          "nume": "Imagine virtuală",
+          "reprezentare": "un punct sau o linie care reprezintă imaginea reflectată",
+          "emoji": "📷",
+          "culoare": "#00FF00"
+        }
+      ],
+      "operatori": [],
+      "explicatie_vizuala": "Imaginea virtuală este formată de intersecția prelungirilor raze- S lor reflectate. Rază incidentă (r1) se întâlneste cu surfața reflectantă (S), este reflextată ca rază reflectată (r2) și această rază reflectată se extinde până la formarea imaginei virtuale (I).",
+      "concept": "imagine virtuală",
+      "definitie_scurta": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate."
+    }
+  }
+]

@@ -119,11 +119,13 @@ class ParsingBook:
             raise ValueError("max_workers and request_timeout must be positive")
         self.request_timeout = request_timeout
         self.card_language = card_language
+        self._chunk_errors: dict[int, str] = {}
 
     # ------------------------------------------------------------------
     # Stage 1: PDF -> definitions
     # ------------------------------------------------------------------
     def parsing_book(self, limit_chunks: int | None = None) -> list[dict]:
+        self._chunk_errors = {}
         pages = self.extract_pages(self.pdf_path)
         logger.info(f"Pages used: {len(pages)}")
 
@@ -149,7 +151,11 @@ class ParsingBook:
         if failed:
             logger.warning(f"Incomplete extraction: {failed}/{len(chunks)} chunks failed")
             if failed == len(chunks):
-                raise RuntimeError("All extraction chunks failed; check the model server and request_timeout")
+                detail = self._chunk_errors.get(min(self._chunk_errors)) if self._chunk_errors else None
+                message = "All extraction chunks failed; check the model server and request_timeout"
+                if detail:
+                    message += f". First failure: {detail}"
+                raise RuntimeError(message)
         logger.info(f"Total unique definitions: {len(definitions)}")
         return definitions
 
@@ -159,6 +165,7 @@ class ParsingBook:
         try:
             raw = self.llm_call(chunk["text"])
         except RuntimeError as exc:
+            self._chunk_errors[index] = str(exc)
             logger.error(f"chunk {index}: {exc}")
             return None
 

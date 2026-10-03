@@ -51,6 +51,14 @@ class ParsingBookTests(unittest.TestCase):
         ), patch.object(parser, "_process_chunk", side_effect=[None, [definition]]):
             self.assertEqual(parser.parsing_book(), [definition])
 
+    def test_all_failed_chunks_include_underlying_error(self):
+        parser = ParsingBook()
+        with patch.object(parser, "extract_pages", return_value=[]), patch.object(
+            parser, "chunking", return_value=[{"text": "source"}]
+        ), patch.object(parser, "llm_call", side_effect=RuntimeError("HTTP 404: model missing")):
+            with self.assertRaisesRegex(RuntimeError, "First failure: HTTP 404: model missing"):
+                parser.parsing_book()
+
 
 if __name__ == "__main__":
     unittest.main()
