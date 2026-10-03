@@ -963,7 +963,21 @@ def generate_card_svg(data: dict) -> str:
 
 
 # ============ PIPELINE ============
-def generate_card_from_definition(definitie: str, delay: float = 2.0) -> Optional[dict]:
+def generate_card_from_definition(
+    definitie: str,
+    delay: float = 2.0,
+    explanation_hint: str = "",
+    image_prompt_hint: str = "",
+) -> Optional[dict]:
+    """
+    Pipeline: definiție → analiză AI → SVG card.
+    
+    Args:
+        definitie: textul definiției
+        delay: pauză după generare
+        explanation_hint: explicație din JSON-ul colegului (opțional)
+        image_prompt_hint: prompt imagine din JSON-ul colegului (opțional)
+    """
     print(f"\n{'='*70}")
     print(f"📝 {definitie[:90]}...")
     print(f"{'='*70}")
@@ -972,6 +986,14 @@ def generate_card_from_definition(definitie: str, delay: float = 2.0) -> Optiona
     data = analyze_definition(definitie)
     if not data:
         return None
+    
+    # Folosește explanation_hint dacă AI-ul nu a dat explicație bună
+    if not data.get("explicatie_vizuala") and explanation_hint:
+        data["explicatie_vizuala"] = explanation_hint[:150]
+    
+    # Salvează image_prompt pentru viitor
+    if image_prompt_hint:
+        data["image_prompt"] = image_prompt_hint
     
     subtipo = f" / {data.get('subtipo')}" if data.get('subtipo') else ""
     print(f"🎨 Generare card SVG (layout: {data.get('layout')}{subtipo})...")
@@ -996,7 +1018,6 @@ def generate_card_from_definition(definitie: str, delay: float = 2.0) -> Optiona
         "json_path": str(json_path),
         "data": data,
     }
-
 
 # ============ TEST ============
 if __name__ == "__main__":

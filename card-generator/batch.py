@@ -16,17 +16,33 @@ def process_definitions_json(input_file: str, delay: float = 3.0):
     
     results = []
     for i, d in enumerate(definitions, 1):
-        print(f"\n[{i}/{len(definitions)}] {d['term']}")
+        term = d.get("term", "unknown")
+        print(f"\n[{i}/{len(definitions)}] {term}")
         
-        card = generate_card_from_definition(d["definition"], delay=delay)
+        # ⚠️ CRUCIAL: extrage definiția
+        definitie = d.get("definition", "").strip()
+        
+        if not definitie:
+            print(f"   ⚠️ Definiție lipsă, skip")
+            continue
+        
+        card = generate_card_from_definition(
+            definitie,                        # ← acum există
+            delay=delay,
+            explanation_hint=d.get("explanation", ""),
+            image_prompt_hint=d.get("image_prompt", ""),
+        )
+        
         if card:
-            card["term"] = d["term"]
+            card["term"] = term
             card["page"] = d.get("page")
             card["quote"] = d.get("quote", "")
-            card["original_definition"] = d["definition"]
+            card["original_definition"] = definitie
+            card["explanation"] = d.get("explanation", "")
+            card["image_prompt"] = d.get("image_prompt", "")
             results.append(card)
         else:
-            print(f"   ❌ Eșec: {d['term']}")
+            print(f"   ❌ Eșec: {term}")
     
     index_path = Path("cards") / "index.json"
     index_path.write_text(
