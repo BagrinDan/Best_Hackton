@@ -1,0 +1,16 @@
+# PyTorch cu CUDA 12.1
+torch>=2.1.0
+torchvision>=0.16.0
+--index-url https://download.pytorch.org/whl/cu121
+
+# Diffusers
+diffusers>=0.27.0
+transformers>=4.38.0
+accelerate>=0.27.0
+safetensors>=0.4.0
+
+# Opțional (recomandat pentru viteză)
+xformers>=0.0.24
+
+# Pentru manipulare imagini
+pillow>=10.0.0

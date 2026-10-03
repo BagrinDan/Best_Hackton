@@ -1,0 +1,62 @@
+[
+  {
+    "term": "oglindă plană",
+    "definition": "Suprafața plană, netedă și lucioasă care reflectă bine lumina.",
+    "quote": "Suprafața plană, netedă și lucioasă care reflectă bine lumina se numește oglindă plană.",
+    "page": 8
+  },
+  {
+    "term": "legile reflexiei luminii",
+    "definition": "Raza incidentă și raza reflectată se află în același plan cu perpendiculara coborîtă în punctul de incidență al razei de lumină pe suprafața reflectoare. Unghiul de reflexie β este egal cu unghiul de incidență α.",
+    "quote": "Legile reflexiei luminii: Raza incidentă și raza reflectată...",
+    "page": 8
+  },
+  {
+    "term": "imagine virtuală",
+    "definition": "Imaginea obținută la intersecția prelungirilor razelor reflectate se numește imagine virtuală.",
+    "quote": "DEFINIȚIE Imaginea obținută la intersecția prelungirilor razelor reflectate...",
+    "page": 9
+  },
+  {
+    "term": "refracția luminii",
+    "definition": "Schimbarea direcției de propagare a luminii la trecerea ei prin suprafața de separație a două medii transparente se numește refracția luminii.",
+    "quote": "Schimbarea direcției de propagare a luminii...",
+    "page": 10
+  },
+  {
+    "term": "unghi de incidență",
+    "definition": "Unghiul format de raza incidentă și perpendiculara coborâtă în punctul de incidență se numește unghi de incidență. Se notează cu litera α.",
+    "quote": "Unghiul AOC, format de raza incidentă AO și perpendiculara OC, se numește unghi de incidență.",
+    "page": 8
+  },
+  {
+    "term": "unghi de reflexie",
+    "definition": "Unghiul format de raza reflectată și perpendiculara coborâtă în punctul de incidență se numește unghi de reflexie. Se notează cu litera β.",
+    "quote": "Unghiul COB, format de raza reflectată OB și perpendiculara OC, se numește unghi de reflexie.",
+    "page": 8
+  },
+  {
+    "term": "volumul",
+    "definition": "Volumul este masa suprapusă la densitate.",
+    "quote": "Volumul este masa suprapusă la densitate.",
+    "page": 42
+  },
+  {
+    "term": "energia cinetică",
+    "definition": "Energia cinetică este energia unui corp aflat în mișcare.",
+    "quote": "Energia cinetică este energia unui corp aflat în mișcare.",
+    "page": 55
+  },
+  {
+    "term": "legea lui Ohm",
+    "definition": "Intensitatea curentului este direct proporțională cu tensiunea și invers proporțională cu rezistența.",
+    "quote": "Legea lui Ohm: I = U / R",
+    "page": 78
+  },
+  {
+    "term": "fotosinteza",
+    "definition": "Procesul prin care plantele transformă energia luminoasă în energie chimică.",
+    "quote": "Fotosinteza este procesul prin care plantele transformă energia luminoasă în energie chimică.",
+    "page": 30
+  }
+]
