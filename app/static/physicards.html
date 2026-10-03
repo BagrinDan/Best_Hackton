@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Sora:wght@600;700&display=swap"
       rel="stylesheet"
     />
+    <base href="/static/" />
     <link rel="stylesheet" href="css/physicards.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   </head>
@@ -316,27 +317,46 @@
         <div class="crumb">Încarcă</div>
         <div class="ptitle">
           <h2>Încarcă manualul tău</h2>
-          <p>Adaugă un PDF și îl transformăm în capitole și teme.</p>
+          <p>Adaugă un PDF și transformăm definițiile în carduri vizuale.</p>
         </div>
         <div class="drop">
           <div class="ico">📄</div>
           <h3 id="fn" style="font-size: 22px">Alege un fișier PDF</h3>
           <p class="mut" style="margin: 8px 0 22px; font-size: 14px">
-            Până la 100 MB
+            Până la 50 MB · PDF cu text selectabil
           </p>
           <label class="btn" style="cursor: pointer; display: inline-block"
             >Alege fișier<input
               type="file"
+              id="pdfInput"
               accept="application/pdf"
               hidden
-              onchange="up(this.files[0])"
+              onchange="up(this.files[0]);this.value=''"
           /></label>
         </div>
-        <div class="steps" id="stp">
-          <span><i></i>Încărcat</span><span><i></i>Analizat</span
-          ><span><i></i>Structurat</span><span><i></i>Gata</span>
+        <div class="upload-options">
+          <label>Pagini de omis la început
+            <input id="skipPages" type="number" min="0" value="0" />
+          </label>
+          <label>Fragmente de analizat (gol = toate)
+            <input id="limitChunks" type="number" min="1" placeholder="Toate" />
+          </label>
+          <label>Maximum de carduri
+            <input id="limitCards" type="number" min="1" max="100" value="20" />
+          </label>
         </div>
-        <p class="mut" id="upn" style="margin-top: 18px; font-size: 14px"></p>
+        <div class="steps" id="stp">
+          <span><i></i>Trimis</span><span><i></i>Definiții extrase</span
+          ><span><i></i>Carduri generate</span><span><i></i>Gata</span>
+        </div>
+        <p class="mut" id="upn" role="status" aria-live="polite" style="margin-top: 18px; font-size: 14px"></p>
+        <div id="uploadResults" class="hidden">
+          <div class="upload-actions">
+            <button class="btn" onclick="studyGeneratedCards()">Învață cu aceste carduri →</button>
+            <a id="generatedPreview" class="back" target="_blank" rel="noopener">Deschide toate cardurile ↗</a>
+          </div>
+          <div id="generatedCards" class="grid g3"></div>
+        </div>
       </section>
       <section id="games3d" class="hidden">
         <div class="crumb">Jocuri 3D</div>

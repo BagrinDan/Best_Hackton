@@ -34,6 +34,9 @@ class CardControllerTests(unittest.TestCase):
         svg_response = self.client.get(data["cards"][0]["svg_url"])
         self.assertEqual(svg_response.status_code, 200)
         self.assertIn("image/svg+xml", svg_response.headers["content-type"])
+        illustration = self.client.get(data["cards"][0]["illustration_url"])
+        self.assertEqual(illustration.status_code, 200)
+        self.assertNotIn("A source definition", illustration.text)
         self.assertEqual(self.client.get(data["preview_url"]).status_code, 200)
         self.assertIn(f"/cards/{self.batch_id}/", data["cards"][0]["svg_url"])
 
@@ -75,6 +78,14 @@ class CardControllerTests(unittest.TestCase):
         })
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers["access-control-allow-origin"], "http://localhost:5173")
+
+    def test_frontend_and_relative_assets_are_served(self):
+        response = self.client.get("/")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('<base href="/static/"', response.text)
+        self.assertIn('id="pdfInput"', response.text)
+        for path in ("css/physicards.css", "js/upload.js", "js/navigation.js", "games/salt_astronaut_3d.html"):
+            self.assertEqual(self.client.get("/static/" + path).status_code, 200, path)
 
 
 if __name__ == "__main__":

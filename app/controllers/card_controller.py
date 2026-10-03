@@ -35,7 +35,11 @@ def generation_result(request: Request, batch_id: str, cards: list[dict]) -> dic
         "count": len(cards),
         "preview_url": str(request.url_for("cards", path=f"{batch_id}/index.html")),
         "cards": [
-            {**card, "svg_url": str(request.url_for("cards", path=f"{batch_id}/{card['image']}"))}
+            {
+                **card,
+                "svg_url": str(request.url_for("cards", path=f"{batch_id}/{card['image']}")),
+                "illustration_url": str(request.url_for("cards", path=f"{batch_id}/{card['illustration']}")),
+            }
             for card in cards
         ],
     }

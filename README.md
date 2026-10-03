@@ -68,6 +68,16 @@ Start the FastAPI app from the project root (Ollama should be running when selec
 ```
 
 Interactive API docs: http://localhost:20000/docs. The API loads the root `.env`.
+The connected PhysiCards frontend is at http://localhost:20000/. Choose
+“Încarcă un PDF”, set the processing options, and select a PDF. The upload screen
+shows the generated SVG cards and offers a button to study them in the existing
+flashcard view. For a quick check, use 5 skipped pages, 2 chunks, and 3 cards.
+Generated study cards show a question and illustration on the front, and a short
+answer with a smaller illustration on the back. “Nu știu” opens the full source
+definition and explanation below the card. Upload again to generate the new
+question/answer fields and illustration files for older batches.
+Generation may take several minutes; the upload controls remain disabled while
+the request is running. No separate `http.server` process is required.
 Local frontend origins on ports 5173 and 3000 are allowed; customize the
 comma-separated `FRONTEND_ORIGINS` variable for another origin.
 
@@ -80,6 +90,8 @@ comma-separated `FRONTEND_ORIGINS` variable for another origin.
 
 Each generation response contains `batch_id`, `count`, `preview_url`, and `cards`.
 Each card includes a `svg_url` for an `<img>` element plus its source metadata.
+Study cards also include `question`, `short_answer`, and `illustration_url` (the
+diagram without the card title, answer header, and definition footer).
 Requests wait for generation to finish, so allow enough time in your frontend
 for local inference. Visual-plan failures yield text cards with `generation_error`;
 an extraction or configuration failure returns HTTP 503.

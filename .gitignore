@@ -177,3 +177,6 @@ pyrightconfig.json
 .browser-check/
 
 
+.agents
+.aws
+.codex

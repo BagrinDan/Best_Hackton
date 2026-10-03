@@ -3,6 +3,7 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -28,10 +29,12 @@ app.add_middleware(
 CARDS_DIR.mkdir(parents=True, exist_ok=True)
 app.include_router(card_router)
 app.mount("/cards", StaticFiles(directory=CARDS_DIR), name="cards")
+STATIC_DIR = Path(__file__).resolve().parent / "static"
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="frontend")
 
 @app.get("/")
 async def read_root():
-    return {"message": "Hello World"}
+    return FileResponse(STATIC_DIR / "physicards.html")
 
 if __name__ == "__main__":
     uvicorn.run("app.main:app", host="127.0.0.1", port=20000, reload=True)

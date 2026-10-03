@@ -2,6 +2,7 @@
 
 
 import re
+import xml.etree.ElementTree as ET
 
 
 PALETTE = ["#4A90E2", "#E74C3C", "#27AE60", "#F4A261", "#7B68EE"]
@@ -654,3 +655,22 @@ def generate_card_svg(data: dict) -> str:
 def safe_color(value, index=0):
     """Only accept hex colors in SVG attributes."""
     return value if isinstance(value, str) and re.fullmatch(r"#[0-9a-fA-F]{6}", value) else PALETTE[index % len(PALETTE)]
+
+
+def generate_illustration_svg(data: dict) -> str:
+    """Render only the diagram for a study card, without its answer and footer."""
+    plan = dict(data, concept="", formula="", definitie_scurta="", explicatie_vizuala="")
+    if not plan.get("elemente") and plan.get("layout") != "geometric":
+        plan["layout"] = "simplu"
+        plan["elemente"] = [{"simbol": "", "nume": "", "reprezentare": "", "emoji": "📘", "culoare": "#4A90E2"}]
+    root = ET.fromstring(generate_card_svg(plan))
+    # The shared header always emits defs, background, header background, title.
+    # Preserve its definitions for shadows used by the illustration itself.
+    for node in list(root)[1:4]:
+        root.remove(node)
+    width = int(root.attrib["width"])
+    height = int(root.attrib["height"]) - 150
+    root.set("viewBox", f"0 130 {width} {height}")
+    root.set("height", str(height))
+    root.set("preserveAspectRatio", "xMidYMid meet")
+    return ET.tostring(root, encoding="unicode")

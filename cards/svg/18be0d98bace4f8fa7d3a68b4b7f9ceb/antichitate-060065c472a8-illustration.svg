@@ -1,0 +1,53 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="900" height="370" viewBox="0 130 900 370" preserveAspectRatio="xMidYMid meet">
+    
+    <ns0:defs>
+        <ns0:linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <ns0:stop offset="0%" style="stop-color:#FFFFFF" />
+            <ns0:stop offset="100%" style="stop-color:#F4F6F8" />
+        </ns0:linearGradient>
+        <ns0:linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <ns0:stop offset="0%" style="stop-color:#4A90E2" />
+            <ns0:stop offset="100%" style="stop-color:#7B68EE" />
+        </ns0:linearGradient>
+        <ns0:filter id="shadowSmall" x="-20%" y="-20%" width="140%" height="140%">
+            <ns0:feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.15" />
+        </ns0:filter>
+    </ns0:defs>
+    <ns0:circle cx="203.33333333333331" cy="290" r="60" fill="#FFD700" opacity="0.15" />
+    <ns0:circle cx="203.33333333333331" cy="290" r="60" fill="none" stroke="#FFD700" stroke-width="3" />
+    <ns0:text x="203.33333333333331" y="310" text-anchor="middle" font-size="64" font-family="Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif">🎓💡</ns0:text>
+    <ns0:text x="203.33333333333331" y="390" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#FFD700">
+        Eucl
+    </ns0:text>
+    <ns0:text x="203.33333333333331" y="412" text-anchor="middle" font-family="Arial" font-size="13" fill="#2C3E50">
+        Euclid
+    </ns0:text>
+    <ns0:text x="203.33333333333331" y="430" text-anchor="middle" font-family="Arial" font-size="11" fill="#7F8C8D" font-style="italic">
+        figură cu un cimbru și o legăt
+    </ns0:text>
+    <ns0:circle cx="450.0" cy="290" r="60" fill="#87CEEB" opacity="0.15" />
+    <ns0:circle cx="450.0" cy="290" r="60" fill="none" stroke="#87CEEB" stroke-width="3" />
+    <ns0:text x="450.0" y="310" text-anchor="middle" font-size="64" font-family="Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif">🔬🔍</ns0:text>
+    <ns0:text x="450.0" y="390" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#87CEEB">
+        Opti
+    </ns0:text>
+    <ns0:text x="450.0" y="412" text-anchor="middle" font-family="Arial" font-size="13" fill="#2C3E50">
+        Optica
+    </ns0:text>
+    <ns0:text x="450.0" y="430" text-anchor="middle" font-family="Arial" font-size="11" fill="#7F8C8D" font-style="italic">
+        un microscop
+    </ns0:text>
+    <ns0:circle cx="696.6666666666666" cy="290" r="60" fill="#FF6347" opacity="0.15" />
+    <ns0:circle cx="696.6666666666666" cy="290" r="60" fill="none" stroke="#FF6347" stroke-width="3" />
+    <ns0:text x="696.6666666666666" y="310" text-anchor="middle" font-size="64" font-family="Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif"> gương</ns0:text>
+    <ns0:text x="696.6666666666666" y="390" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#FF6347">
+        Cato
+    </ns0:text>
+    <ns0:text x="696.6666666666666" y="412" text-anchor="middle" font-family="Arial" font-size="13" fill="#2C3E50">
+        Catoptica
+    </ns0:text>
+    <ns0:text x="696.6666666666666" y="430" text-anchor="middle" font-family="Arial" font-size="11" fill="#7F8C8D" font-style="italic">
+        un reflector
+    </ns0:text>
+    
+</ns0:svg>

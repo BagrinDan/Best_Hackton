@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from app.core.parsing_book import ParsingBook
-from app.core.svg_generator import generate_card_svg
+from app.core.svg_generator import generate_card_svg, generate_illustration_svg
 from app.services.card_service import CardService, parser_from_environment
 
 
@@ -89,6 +89,19 @@ class CardServiceTests(unittest.TestCase):
                     plan = visual_plan()
                     plan.update(layout=layout, subtipo=subtype, concept="Test", definitie_scurta="Definition")
                     ET.fromstring(generate_card_svg(plan))
+                    illustration = generate_illustration_svg(plan)
+                    root = ET.fromstring(illustration)
+                    self.assertIn("viewBox", root.attrib)
+                    self.assertNotIn("Definition", illustration)
+                    self.assertNotIn("Explanation", illustration)
+
+    def test_illustration_keeps_optics_diagram_without_answer(self):
+        plan = visual_plan()
+        plan.update(layout="geometric", subtipo="reflexie", concept="Secret answer", definitie_scurta="Definition")
+        svg = generate_illustration_svg(plan)
+        self.assertNotIn("Secret answer", svg)
+        self.assertNotIn("Definition", svg)
+        self.assertIn("marker-end", svg)
 
 
 if __name__ == "__main__":

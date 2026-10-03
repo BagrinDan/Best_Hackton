@@ -17,7 +17,7 @@ const FAQ = [
   ],
   [
     "Pot încărca propriul manual?",
-    "Da, din butonul „Încarcă un PDF”. În acest prototip încărcarea este demonstrativă, procesarea reală se conectează la server.",
+    "Da, din butonul „Încarcă un PDF”. Definițiile din manual sunt extrase și transformate în carduri SVG pe care le poți studia.",
   ],
   [
     "Ce sunt jocurile?",

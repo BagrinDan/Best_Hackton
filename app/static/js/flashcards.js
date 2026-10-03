@@ -1,7 +1,7 @@
 function openSet(name, crumb, b, nav) {
   back = b;
   cur = name;
-  $("stCrumb").innerHTML = crumb.replace(/([^›]+)$/, "<b>$1</b>");
+  $("stCrumb").innerHTML = esc(crumb).replace(/([^›]+)$/, "<b>$1</b>");
   $("stTitle").textContent = "Flashcard-uri: " + name;
   if (!S[name]) {
     $("deck").classList.add("hidden");
@@ -25,6 +25,7 @@ function start() {
 function draw() {
   const c = set[idx];
   $("fl").classList.remove("flip");
+  $("fl").classList.toggle("generated-study", Boolean(c.studyIllustration));
   $("more").classList.add("hidden");
   document.querySelectorAll(".rate").forEach((b) => (b.disabled = false));
   $("tg").textContent = c.tag;
@@ -34,7 +35,8 @@ function draw() {
   $("ff").style.fontSize =
     c.f.length > 24 ? "24px" : c.f.length > 14 ? "32px" : "";
   $("ee").innerHTML = c.e;
-  $("mm").textContent = c.m;
+  if (c.studyIllustration) $("mm").innerHTML = c.studyIllustration;
+  else $("mm").textContent = c.m;
   $("cnt").textContent = `${idx + 1} / ${set.length}`;
   $("pr").style.width = ((idx + 1) / set.length) * 100 + "%";
 }
@@ -45,7 +47,7 @@ function rate(r) {
   const c = set[idx];
   const x = c.x || (c.e || "") + " " + (c.h || "");
   $("more").innerHTML =
-    `<h3>Hai să înțelegem mai bine</h3><p><b>Întrebarea:</b> ${c.q}</p><p>${x}</p><div class="tip">💡 ${c.h}</div><button class="btn" onclick="next()">Continuă →</button>`;
+    `<h3>Hai să înțelegem mai bine</h3><p><b>Întrebarea:</b> ${esc(c.q)}</p><p>${x}</p><div class="tip">💡 ${c.h}</div><button class="btn" onclick="next()">Continuă →</button>`;
   $("more").classList.remove("hidden");
   $("more").scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
@@ -61,7 +63,7 @@ function finish() {
     p = Math.round((good / n) * 100);
   const weak = set
     .filter((_, i) => ans[i] !== 2)
-    .map((c) => `<li>${c.q}</li>`)
+    .map((c) => `<li>${esc(c.q)}</li>`)
     .join("");
   const msg =
     p >= 80
@@ -72,5 +74,5 @@ function finish() {
   $("deck").classList.add("hidden");
   $("res").classList.remove("hidden");
   $("res").innerHTML =
-    `<h2>Ai terminat tema!</h2><p class="mut" style="margin-top:8px">Raportul tău pentru <b>${cur}</b></p><div class="ring" style="--p:${p}%"><strong>${p}%</strong></div><div class="stats" style="grid-template-columns:repeat(2,1fr)"><div class="stat">✕<b>${bad}</b>Nu știu</div><div class="stat">✓<b>${good}</b>Știu</div></div><div class="concl"><b>Concluzie:</b><br>${msg}</div>${weak ? `<div class="weak"><b>De repetat:</b><ul>${weak}</ul></div>` : ""}<button class="btn" onclick="start()">↻ Repetă tema</button> <button class="back" style="margin:0 0 0 8px" onclick="backFn()">Alege altă temă</button>`;
+    `<h2>Ai terminat tema!</h2><p class="mut" style="margin-top:8px">Raportul tău pentru <b>${esc(cur)}</b></p><div class="ring" style="--p:${p}%"><strong>${p}%</strong></div><div class="stats" style="grid-template-columns:repeat(2,1fr)"><div class="stat">✕<b>${bad}</b>Nu știu</div><div class="stat">✓<b>${good}</b>Știu</div></div><div class="concl"><b>Concluzie:</b><br>${msg}</div>${weak ? `<div class="weak"><b>De repetat:</b><ul>${weak}</ul></div>` : ""}<button class="btn" onclick="start()">↻ Repetă tema</button> <button class="back" style="margin:0 0 0 8px" onclick="backFn()">Alege altă temă</button>`;
 }

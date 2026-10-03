@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="680" xmlns="http://www.w3.org/2000/svg">
+    
+    <defs>
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFFFFF"/>
+            <stop offset="100%" style="stop-color:#F4F6F8"/>
+        </linearGradient>
+        <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#4A90E2"/>
+            <stop offset="100%" style="stop-color:#7B68EE"/>
+        </linearGradient>
+        <filter id="shadowSmall" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.15"/>
+        </filter>
+    </defs>
+    <rect width="900" height="100%" fill="url(#bgGrad)"/>
+    <rect x="0" y="0" width="900" height="130" fill="url(#headerGrad)"/>
+    <text x="450" y="65" text-anchor="middle" 
+          font-family="Arial, Helvetica, sans-serif" font-size="36" 
+          font-weight="bold" fill="#FFFFFF">
+        Antichitate
+    </text>
+    
+    
+    
+    <circle cx="172.5" cy="290" r="60" fill="#FFD700" opacity="0.15"/>
+    <circle cx="172.5" cy="290" r="60" fill="none" stroke="#FFD700" stroke-width="3"/>
+    <text x="172.5" y="310" text-anchor="middle" font-size="64" 
+          font-family="Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif">👤👀</text>
+    <text x="172.5" y="390" text-anchor="middle" 
+          font-family="Arial" font-size="20" font-weight="bold" fill="#FFD700">
+        Eucl
+    </text>
+    <text x="172.5" y="412" text-anchor="middle" 
+          font-family="Arial" font-size="13" fill="#2C3E50">
+        Euclid
+    </text>
+    <text x="172.5" y="430" text-anchor="middle" 
+          font-family="Arial" font-size="11" fill="#7F8C8D" font-style="italic">
+        figură umană cu cap și ochii
+    </text>
+    <circle cx="357.5" cy="290" r="60" fill="#87CEEB" opacity="0.15"/>
+    <circle cx="357.5" cy="290" r="60" fill="none" stroke="#87CEEB" stroke-width="3"/>
+    <text x="357.5" y="310" text-anchor="middle" font-size="64" 
+          font-family="Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif">💡🔄</text>
+    <text x="357.5" y="390" text-anchor="middle" 
+          font-family="Arial" font-size="20" font-weight="bold" fill="#87CEEB">
+        Opti
+    </text>
+    <text x="357.5" y="412" text-anchor="middle" 
+          font-family="Arial" font-size="13" fill="#2C3E50">
+        Optica
+    </text>
+    <text x="357.5" y="430" text-anchor="middle" 
+          font-family="Arial" font-size="11" fill="#7F8C8D" font-style="italic">
+        luminoasă și o formă de cerc
+    </text>
+    <circle cx="542.5" cy="290" r="60" fill="#FF6347" opacity="0.15"/>
+    <circle cx="542.5" cy="290" r="60" fill="none" stroke="#FF6347" stroke-width="3"/>
+    <text x="542.5" y="310" text-anchor="middle" font-size="64" 
+          font-family="Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif"> gương🔄</text>
+    <text x="542.5" y="390" text-anchor="middle" 
+          font-family="Arial" font-size="20" font-weight="bold" fill="#FF6347">
+        Cato
+    </text>
+    <text x="542.5" y="412" text-anchor="middle" 
+          font-family="Arial" font-size="13" fill="#2C3E50">
+        Catoptica
+    </text>
+    <text x="542.5" y="430" text-anchor="middle" 
+          font-family="Arial" font-size="11" fill="#7F8C8D" font-style="italic">
+        un reflector sau un obiect cu 
+    </text>
+    <circle cx="727.5" cy="290" r="60" fill="#ADD8E6" opacity="0.15"/>
+    <circle cx="727.5" cy="290" r="60" fill="none" stroke="#ADD8E6" stroke-width="3"/>
+    <text x="727.5" y="310" text-anchor="middle" font-size="64" 
+          font-family="Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif">📖✍️</text>
+    <text x="727.5" y="390" text-anchor="middle" 
+          font-family="Arial" font-size="20" font-weight="bold" fill="#ADD8E6">
+        Lucr
+    </text>
+    <text x="727.5" y="412" text-anchor="middle" 
+          font-family="Arial" font-size="13" fill="#2C3E50">
+        Lucrările
+    </text>
+    <text x="727.5" y="430" text-anchor="middle" 
+          font-family="Arial" font-size="11" fill="#7F8C8D" font-style="italic">
+        papere cu titlu și nume de aut
+    </text>
+    
+    <rect x="50" y="500" width="800" height="50" rx="15" 
+          fill="#E8F4FD" stroke="#4A90E2" stroke-width="2"/>
+    <text x="450" y="532" text-anchor="middle" 
+          font-family="Arial" font-size="14" fill="#1A1A2E">
+        💡 Această diagramă ilustrează lucrările lui Euclid despre Optica și Catoptica, care sunt fundamentale în domeniul opticii.
+    </text>
+    <rect x="50" y="565" width="800" height="85" rx="12" 
+          fill="#FFF9E6" stroke="#F4A261" stroke-width="2"/>
+    <text x="450" y="589" text-anchor="middle" 
+          font-family="Arial" font-size="13" font-weight="bold" fill="#E76F51">
+        📖 Definiție
+    </text>
+    <text x="450" y="611" text-anchor="middle" 
+          font-family="Arial" font-size="13" fill="#2C3E50">
+        Acestea au fost prezentate în lucrările „Optica” și „Catoptica”, ce aparțin lui Euclide, unul
+    </text>
+    <text x="450" y="629" text-anchor="middle" 
+          font-family="Arial" font-size="13" fill="#2C3E50">
+        dintre cei mai mari filosofi ai Greciei antice, care a trait în secolul III î. Hr.
+    </text>
+</svg>
