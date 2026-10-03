@@ -23,7 +23,6 @@ const FAQ = [
     "Ce sunt jocurile?",
     "Sunt în „Clase”: alegi clasa, capitolul și tema, iar fiecare temă are jocurile ei (formule, duel, 3D) acolo unde se potrivesc.",
   ],
-  ["Am nevoie de cont?", "Nu. Nu există înregistrare sau logare."],
 ];
 const C1 = [
   {

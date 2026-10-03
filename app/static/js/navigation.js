@@ -3,6 +3,10 @@ const SEC = [
   "domains",
   "subs",
   "classes",
+  "games3d",
+  "circuitWorkshop",
+  "particleWorkshop",
+  "natureWorkshop",
   "study",
   "upload",
   "theme",
@@ -22,7 +26,42 @@ let back = () => go("home"),
 function backFn() {
   back();
 }
+function openCircuitWorkshop() {
+  const frame = $("circuitFrame");
+  if (!frame.getAttribute("src")) frame.src = frame.dataset.src;
+  go("circuitWorkshop", "games3d");
+}
+function openParticleWorkshop() {
+  const frame = $("particleFrame");
+  if (!frame.getAttribute("src")) frame.src = frame.dataset.src;
+  go("particleWorkshop", "games3d");
+}
+function openNatureWorkshop(kind) {
+  const games = {
+    gravity: ["games/salt_astronaut_3d.html", "Saltul astronautului"],
+    eclipse: ["games/eclipse_3d.html", "Cum apar eclipsele?"],
+    day: ["games/zi_noapte_3d.html", "Zi și noapte"],
+  };
+  if (!games[kind]) return;
+  const frame = $("natureFrame");
+  frame.src = games[kind][0];
+  frame.title = games[kind][1];
+  go("natureWorkshop", "games3d");
+}
 function go(id, nav) {
+  document.body.classList.toggle(
+    "workshop-open",
+    ["circuitWorkshop", "particleWorkshop", "natureWorkshop"].includes(id),
+  );
+  for (const [section, frameId] of [
+    ["circuitWorkshop", "circuitFrame"],
+    ["particleWorkshop", "particleFrame"],
+    ["natureWorkshop", "natureFrame"],
+  ]) {
+    const frame = $(frameId);
+    if (id !== section && frame.getAttribute("src"))
+      frame.removeAttribute("src");
+  }
   SEC.forEach((x) => $(x).classList.toggle("hidden", x !== id));
   const n = nav || id;
   document

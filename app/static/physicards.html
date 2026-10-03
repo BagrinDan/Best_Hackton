@@ -21,6 +21,7 @@
         <a data-p="home" onclick="go('home')">Acasă</a
         ><a data-p="domains" onclick="showDomains()">Pe domenii</a
         ><a data-p="classes" onclick="showClasses()">Clase</a>
+        <a data-p="games3d" onclick="go('games3d')">Jocuri 3D</a>
       </div>
       <div style="width: 40px"></div>
     </nav>
@@ -36,7 +37,7 @@
             înveți, fără cont și fără autentificare.
           </p>
         </div>
-        <div class="three">
+        <div class="three home-options">
           <button class="card big" onclick="showDomains()">
             <div class="ico">🌐</div>
             <h3>Pe domenii</h3>
@@ -54,6 +55,15 @@
               tema.
             </p>
             <div class="go">Alege clasa →</div>
+          </button>
+          <button class="card big y" onclick="go('games3d')">
+            <div class="ico">🎮</div>
+            <h3>Jocuri 3D</h3>
+            <p>
+              Învață fizica prin experimente interactive. Asamblează circuite și
+              explorează mișcarea particulelor în laboratoarele 3D.
+            </p>
+            <div class="go">Explorează jocurile →</div>
           </button>
           <button class="card big" onclick="go('upload')">
             <div class="ico">⬆️</div>
@@ -327,6 +337,87 @@
           ><span><i></i>Structurat</span><span><i></i>Gata</span>
         </div>
         <p class="mut" id="upn" style="margin-top: 18px; font-size: 14px"></p>
+      </section>
+      <section id="games3d" class="hidden">
+        <div class="crumb">Jocuri 3D</div>
+        <div class="ptitle">
+          <h2>Învață prin experimente 3D</h2>
+          <p>
+            Alege un atelier, construiește și observă cum funcționează fizica.
+          </p>
+        </div>
+        <div class="grid g3">
+          <button class="card tile" onclick="openCircuitWorkshop()">
+            <div class="e">⚡</div>
+            <h3>Atelier de circuit 3D</h3>
+            <p>
+              Asamblează circuite în serie, paralel și mixte. Urmărește curentul
+              și compară lumina becurilor.
+            </p>
+            <div class="go">Deschide atelierul →</div>
+          </button>
+          <button class="card tile" onclick="openParticleWorkshop()">
+            <div class="e">🔬</div>
+            <h3>Laboratorul particulelor 3D</h3>
+            <p>
+              Explorează solidul, lichidul și gazul. Modifică temperatura și
+              urmărește mișcarea particulelor.
+            </p>
+            <div class="go">Deschide laboratorul →</div>
+          </button>
+          <button class="card tile" onclick="openNatureWorkshop('gravity')">
+            <div class="e">🪐</div>
+            <h3>Saltul astronautului</h3>
+            <p>
+              Testează saltul astronautului pe cele opt planete și pe Lună.
+              Compară înălțimea și timpul până la aterizare.
+            </p>
+            <div class="go">Explorează gravitația →</div>
+          </button>
+          <button class="card tile" onclick="openNatureWorkshop('eclipse')">
+            <div class="e">🌘</div>
+            <h3>Cum apar eclipsele?</h3>
+            <p>
+              Mută Luna, aliniază corpurile cerești și descoperă eclipsele de
+              Soare și de Lună.
+            </p>
+            <div class="go">Explorează eclipsele →</div>
+          </button>
+          <button class="card tile" onclick="openNatureWorkshop('day')">
+            <div class="e">🌍</div>
+            <h3>Zi și noapte</h3>
+            <p>
+              Rotește Pământul și urmărește un oraș care trece din lumină în
+              întuneric.
+            </p>
+            <div class="go">Explorează rotația →</div>
+          </button>
+        </div>
+      </section>
+      <section id="circuitWorkshop" class="hidden">
+        <button class="back" onclick="go('games3d')">← Jocuri 3D</button>
+        <iframe
+          id="circuitFrame"
+          title="Atelier de circuit 3D"
+          data-src="games/atelier_circuit_3d.html"
+        ></iframe>
+      </section>
+      <section id="particleWorkshop" class="hidden">
+        <button class="back" onclick="go('games3d')">← Jocuri 3D</button>
+        <iframe
+          id="particleFrame"
+          class="workshop-frame"
+          title="Laboratorul particulelor 3D"
+          data-src="games/particule_3d.html"
+        ></iframe>
+      </section>
+      <section id="natureWorkshop" class="hidden">
+        <button class="back" onclick="go('games3d')">← Jocuri 3D</button>
+        <iframe
+          id="natureFrame"
+          class="workshop-frame"
+          title="Experimente astronomice 3D"
+        ></iframe>
       </section>
     </main>
     <script src="js/helpers.js"></script>

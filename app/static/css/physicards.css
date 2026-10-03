@@ -993,3 +993,64 @@ main {
     display: none;
   }
 }
+
+/* Catalogul de jocuri și atelierul integrat. */
+.game-coming {
+  cursor: default;
+}
+.game-coming:hover {
+  transform: none;
+  border-color: white;
+}
+.game-coming .tag {
+  align-self: flex-start;
+  margin-top: 12px;
+}
+.workshop-open main {
+  max-width: 1600px;
+  padding: 12px 16px;
+}
+#circuitWorkshop .back,
+#particleWorkshop .back {
+  margin-bottom: 8px;
+}
+#circuitFrame,
+.workshop-frame {
+  display: block;
+  width: 100%;
+  height: calc(100dvh - 145px);
+  min-height: 590px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #f6f4ec;
+}
+@media (max-width: 560px) {
+  .nav {
+    padding: 0 12px;
+  }
+  .navlinks a {
+    padding: 8px;
+    font-size: 12px;
+  }
+  .nav > div:last-child {
+    display: none;
+  }
+  #circuitFrame,
+  .workshop-frame {
+    height: 1100px;
+  }
+}
+
+/* Patru opțiuni pe Acasă, cu spațiu suficient pentru descrieri. */
+.home-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 700px) {
+  .home-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+#natureWorkshop .back {
+  margin-bottom: 8px;
+}
