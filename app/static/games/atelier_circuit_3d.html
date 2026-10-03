@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atelier de circuite · Serie, paralel, mixt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Sora:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="atelier_circuit_3d.css" />
+  </head>
+  <body>
+    <header>
+      <h1>⚡ Atelier de circuite 3D</h1>
+      <nav aria-label="Alege tipul circuitului">
+        <button data-mode="series">Serie</button>
+        <button data-mode="parallel">Paralel</button>
+        <button data-mode="mixed">Mixt</button>
+      </nav>
+    </header>
+    <main>
+      <div class="left">
+        <section id="view" class="panel">
+          <div class="hint">
+            Selectează piesa → apasă pe suport · Trage pentru rotire
+          </div>
+        </section>
+        <section class="panel">
+          <h2 id="assemblyTitle"></h2>
+          <div id="parts" class="row"></div>
+          <div id="slots" class="row"></div>
+          <div class="row">
+            <button id="auto">Asamblează automat</button
+            ><button id="reset">Golește</button
+            ><button id="camera">Vedere inițială</button>
+          </div>
+        </section>
+      </div>
+      <aside class="panel">
+        <h2>Pașii de asamblare</h2>
+        <p id="description"></p>
+        <ol id="steps"></ol>
+        <label for="voltage"
+          >Tensiunea bateriei: <b id="voltageValue"></b
+        ></label>
+        <input id="voltage" type="range" min="3" max="12" step="3" value="6" />
+        <button id="switch"></button>
+        <div id="meters"></div>
+        <div id="feedback" role="status" aria-live="polite">
+          Alege tipul circuitului din bara de sus, apoi montează bateria.
+        </div>
+        <p>
+          Impulsurile aurii arată simbolic sensul convențional al curentului, de
+          la borna pozitivă prin consumatori spre borna negativă. Ele nu
+          reprezintă viteza electronilor sau particule de energie. Energia este
+          transferată prin câmpul electromagnetic; becurile o transformă în
+          lumină și căldură.
+        </p>
+        <p>
+          Firele sunt preconectate. Fiecare bec are o rezistență ideală de 20 Ω.
+          Poți scoate un bec ca să verifici ce mai funcționează. Scena 3D
+          necesită internet; schema 2D funcționează și fără acesta.
+        </p>
+      </aside>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="atelier_circuit_3d.js"></script>
+  </body>
+</html>

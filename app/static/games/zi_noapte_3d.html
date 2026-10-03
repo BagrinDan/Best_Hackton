@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PhysiCards · Zi și noapte</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Sora:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="cosmos_3d.css" />
+  </head>
+  <body data-game="day">
+    <header>
+      <h1>Zi și noapte</h1>
+      <span class="muted">Explorează fizica · Model 3D</span>
+    </header>
+    <main>
+      <section class="stage panel">
+        <div id="view">
+          <div class="overlay">
+            <span id="sceneStatus"></span
+            ><span id="renderStatus">Scenă 3D</span>
+          </div>
+        </div>
+        <div class="toolbar">
+          <button id="play">Pornește animația</button
+          ><button id="camera">Vedere inițială</button
+          ><button id="reset">Resetează experimentul</button
+          ><span class="muted">Trage pentru rotire · Rotița pentru zoom</span>
+        </div>
+      </section>
+      <aside class="panel">
+        <h2 id="concept"></h2>
+        <p id="intro"></p>
+        <div id="controls"></div>
+        <div id="metrics" class="metrics"></div>
+        <section class="mission">
+          <span id="missionCount" class="muted"></span>
+          <h2 id="missionTitle"></h2>
+          <p id="missionText"></p>
+          <div id="answers"></div>
+          <button id="next" hidden>Următoarea misiune →</button>
+          <div id="feedback" role="status" aria-live="polite">
+            Explorează scena, apoi răspunde.
+          </div>
+        </section>
+        <details>
+          <summary>Modelul și limitele lui</summary>
+          <p id="modelNote"></p>
+        </details>
+      </aside>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="cosmos_3d.js"></script>
+  </body>
+</html>
