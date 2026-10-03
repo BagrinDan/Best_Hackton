@@ -1,0 +1,26 @@
+[
+  {
+    "term": "reflexie a luminii",
+    "definition": "Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine se numește reflexie a luminii.",
+    "quote": "Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine se numește reflexie a luminii.",
+    "page": 6,
+    "explanation": "Reflexia luminoasă este atunci când o luminoasă se întoarce înapoi în mediuul de unde provine, ca și cum ar fi întâlnită o suprafață reflectantă. De exemplu, când vezi un obiect în oglindă.",
+    "image_prompt": "O persoană care se miră într-un lacruță de vânzare."
+  },
+  {
+    "term": "oglindă plană",
+    "definition": "Suprafața plană, netedă și lucioasă care reflectă bine lumina se numește oglindă plană.",
+    "quote": "Suprafața plană, netedă și lucioasă care reflectă bine lumina se numește oglindă plană.",
+    "page": 6,
+    "explanation": "Oglindă plană este o suprafață netedă și lucioasă care reflectă bine lumina, ca și cum ar fi un reflejator simplu. De exemplu, o piață de vânzare poate fi considerată o oglindă plană pentru obiectele pe care le vândă.",
+    "image_prompt": "O suprafață netedă și liniștită reflectând lumina, cum ar fi o piață de vânzare cu produsele reflectate perfect în fața lor."
+  },
+  {
+    "term": "imagine virtuală",
+    "definition": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate.",
+    "quote": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate se numește imagine virtuală.",
+    "page": 9,
+    "explanation": "Imaginea virtuală este ce vădem când o luminoasă se reflecte de pe suprafețe și împărțește luminile în direcțiile diferite, ca și cum ar fi o imagine reală. De exemplu, când vă uit la un obiect într-un miroir, veți vedea imaginea virtuală a acelui obiect.",
+    "image_prompt": "Un obiect reflectat într-un miroir cu linii de raze- S care se întorc și împărțesc luminile pentru a crea o imagine reală a obiectului."
+  }
+]

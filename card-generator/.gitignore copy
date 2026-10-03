@@ -1,0 +1,4 @@
+.env
+cards/
+cache/
+venv/
