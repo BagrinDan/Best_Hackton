@@ -24,3 +24,13 @@ Scopul principal al aplicației este de a transforma procesul tradițional de î
 ```text
 Book -> ParsingBook -> CardService -> LLM visual plan -> SVG cards
 ```
+
+
+How to run:
+
+    1. pyenv shell 3.11.10
+    2. python -m venv .venv
+    3. pip install -r req.txt
+
+    4. Run ollama localy, using model qwen2.5:3B
+    5. uvicorn app.main:app --reload --port 20000
