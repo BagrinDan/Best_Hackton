@@ -1,0 +1,80 @@
+[
+  {
+    "term": "legea reflexiei luminii",
+    "definition": "Unghiul de reflexie β este egal cu unghiul de incidență α. <β = <α",
+    "quote": "Unghiul de reflexie β este egal cu unghiul de incidență α. <β = <α",
+    "page": 8,
+    "image": "legea_reflexiei_luminii-e160572f4ba0.svg",
+    "illustration": "legea_reflexiei_luminii-e160572f4ba0-illustration.svg",
+    "question": "Care relație există între unghiul de reflexiune și unghiul de incidente?",
+    "short_answer": "<β = <α",
+    "explanation": "Diagrama arată unghiurile de reflexie și incidente care sunt egale, demonstrând legătura lor.",
+    "visual_plan": {
+      "layout": "geometric",
+      "question": "Care relație există între unghiul de reflexiune și unghiul de incidente?",
+      "is_definition": true,
+      "short_answer": "<β = <α",
+      "subtipo": "unghi_reflexie",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "β",
+          "nume": "unghiul de reflexie",
+          "reprezentare": "Unghiul format între normala și direcția refletată a luminii.",
+          "emoji": "➡️📐",
+          "culoare": "#2F5D9B"
+        },
+        {
+          "simbol": "α",
+          "nume": "unghiul de incidente",
+          "reprezentare": "Unghiul format între normala și direcția incidentă a luminii.",
+          "emoji": "➡️📐",
+          "culoare": "#D85F4A"
+        }
+      ],
+      "operatori": [],
+      "explicatie_vizuala": "Diagrama arată unghiurile de reflexie și incidente care sunt egale, demonstrând legătura lor.",
+      "concept": "legea reflexiei luminii",
+      "definitie_scurta": "Unghiul de reflexie β este egal cu unghiul de incidență α. <β = <α"
+    }
+  },
+  {
+    "term": "imagine virtuală",
+    "definition": "Imaginea obținută la intersecția prelungirilor raze- S\nlor reflectate se numește imagine virtuală.",
+    "quote": "Imaginea obținută la intersecția prelungirilor raze- S\nlor reflectate se numește imagine virtuală.",
+    "page": 10,
+    "image": "imagine_virtuala-291e187056d2.svg",
+    "illustration": "imagine_virtuala-291e187056d2-illustration.svg",
+    "question": "Cum este formată o imagine virtuală?",
+    "short_answer": "Intersecția prelungirilor raze- Slor reflectate.",
+    "explanation": "Diagrama arată o imagine virtuală formându-se prin intersecția prelungirilor raze- Slor reflectate.",
+    "visual_plan": {
+      "layout": "geometric",
+      "question": "Cum este formată o imagine virtuală?",
+      "is_definition": true,
+      "short_answer": "Intersecția prelungirilor raze- Slor reflectate.",
+      "subtipo": "reflexie",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "S",
+          "nume": "raza lumină",
+          "reprezentare": "linii de lângă unghiul reflexiei",
+          "emoji": "💡",
+          "culoare": "#D85F4A"
+        },
+        {
+          "simbol": "I",
+          "nume": "intersecție",
+          "reprezentare": "punct final al prelungirilor raze- Slor",
+          "emoji": "📍",
+          "culoare": "#278467"
+        }
+      ],
+      "operatori": [],
+      "explicatie_vizuala": "Diagrama arată o imagine virtuală formându-se prin intersecția prelungirilor raze- Slor reflectate.",
+      "concept": "imagine virtuală",
+      "definitie_scurta": "Imaginea obținută la intersecția prelungirilor raze- S\nlor reflectate se numește imagine virtuală."
+    }
+  }
+]

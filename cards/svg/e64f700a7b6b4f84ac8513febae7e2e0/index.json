@@ -1,0 +1,151 @@
+[
+  {
+    "term": "reflexie a luminii",
+    "definition": "Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine.",
+    "quote": "Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine se numește reflexie a luminii.",
+    "page": 8,
+    "image": "reflexie_a_luminii-a76222f6b52a.svg",
+    "illustration": "reflexie_a_luminii-a76222f6b52a-illustration.svg",
+    "question": "Ce este reflexia luminoasă?",
+    "short_answer": "Schimbarea direcției luminii la întâlnirea cu o suprafață.",
+    "explanation": "Luminoasa se întoarce în mediuul din care vine la întâlnirea cu o suprafață.",
+    "visual_plan": {
+      "layout": "geometric",
+      "question": "Ce este reflexia luminoasă?",
+      "is_definition": true,
+      "short_answer": "Schimbarea direcției luminii la întâlnirea cu o suprafață.",
+      "subtipo": "reflexie",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "L",
+          "nume": "luminoasă",
+          "reprezentare": "sunet",
+          "emoji": "💡",
+          "culoare": "#D85F4A"
+        },
+        {
+          "simbol": "S",
+          "nume": "suprafață",
+          "reprezentare": "pământ",
+          "emoji": "🌍",
+          "culoare": "#278467"
+        }
+      ],
+      "operatori": [],
+      "explicatie_vizuala": "Luminoasa se întoarce în mediuul din care vine la întâlnirea cu o suprafață.",
+      "concept": "reflexie a luminii",
+      "definitie_scurta": "Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine."
+    }
+  },
+  {
+    "term": "oglindă plană",
+    "definition": "Suprafața plană, netedă și lucioasă care reflectă bine lumina.",
+    "quote": "Suprafața plană, netedă și lucioasă care reflectă bine lumina se numește oglindă plană.",
+    "page": 8,
+    "image": "oglinda_plana-9889ccdab97e.svg",
+    "illustration": "oglinda_plana-9889ccdab97e-illustration.svg",
+    "question": "Ce este o oglindă plană?",
+    "short_answer": "O suprafață plană, netedă și lucioasă care reflectă bine lumina.",
+    "explanation": "O oglindă plană este o suprafață netedă și lucioasă care reflectă bine lumina.",
+    "visual_plan": {
+      "layout": "simplu",
+      "question": "Ce este o oglindă plană?",
+      "is_definition": true,
+      "short_answer": "O suprafață plană, netedă și lucioasă care reflectă bine lumina.",
+      "subtipo": "",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": " oglindă",
+          "nume": "Oglindă Plană",
+          "reprezentare": "Mirror",
+          "emoji": "🪞",
+          "culoare": "#2F5D9B"
+        }
+      ],
+      "operatori": [],
+      "explicatie_vizuala": "O oglindă plană este o suprafață netedă și lucioasă care reflectă bine lumina.",
+      "concept": "oglindă plană",
+      "definitie_scurta": "Suprafața plană, netedă și lucioasă care reflectă bine lumina."
+    }
+  },
+  {
+    "term": "legile reflexiei luminii",
+    "definition": "Raza incidentă și raza reflectată se află în același plan cu perpendiculara coborîtă în punctul de incidență al razei de lumină pe suprafața reflectoare. Unghiul de reflexie β este egal cu unghiul de incidență α.",
+    "quote": "Legile reflexiei luminii:\nRaza incidentă și raza reflectată se află în același plan cu perpendiculara coborîtă\nîn punctul de incidență al razei de lumină pe suprafața reflectoare.\nUnghiul de reflexie β este egal cu unghiul de incidență α. <β = <α",
+    "page": 8,
+    "image": "legile_reflexiei_luminii-57d614845133.svg",
+    "illustration": "legile_reflexiei_luminii-57d614845133-illustration.svg",
+    "question": "Ce legătură există între unghiul de incidente și unghiul de reflexie în reflexia luminii?",
+    "short_answer": "Unghiul de reflexie este egal cu unghiul de incidente.",
+    "explanation": "Raza incidentă și raza reflectată se află în același plan cu perpendiculara coborîtă în punctul de incidență al razei de lumină pe suprafața reflectoare. Unghiul de reflexie este egal cu unghiul de incidente.",
+    "visual_plan": {
+      "layout": "geometric",
+      "question": "Ce legătură există între unghiul de incidente și unghiul de reflexie în reflexia luminii?",
+      "is_definition": true,
+      "short_answer": "Unghiul de reflexie este egal cu unghiul de incidente.",
+      "subtipo": "reflexie",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "α",
+          "nume": "unghiul de incidente",
+          "reprezentare": "unghi între raza incidentă și perpendiculara în punctul de incidență",
+          "emoji": "➡️",
+          "culoare": "#2F5D9B"
+        },
+        {
+          "simbol": "β",
+          "nume": "unghiul de reflexie",
+          "reprezentare": "unghi între raza reflectată și perpendiculara în punctul de incidență",
+          "emoji": "➡️",
+          "culoare": "#D85F4A"
+        }
+      ],
+      "operatori": [],
+      "explicatie_vizuala": "Raza incidentă și raza reflectată se află în același plan cu perpendiculara coborîtă în punctul de incidență al razei de lumină pe suprafața reflectoare. Unghiul de reflexie este egal cu unghiul de incidente.",
+      "concept": "legile reflexiei luminii",
+      "definitie_scurta": "Raza incidentă și raza reflectată se află în același plan cu perpendiculara coborîtă în punctul de incidență al razei de lumină pe suprafața reflectoare. Unghiul de reflexie β este egal cu unghiul de incidență α."
+    }
+  },
+  {
+    "term": "imagine virtuală",
+    "definition": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate se numește imagine virtuală.",
+    "quote": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate se numește imagine virtuală.",
+    "page": 10,
+    "image": "imagine_virtuala-b5b570dd5c1f.svg",
+    "illustration": "imagine_virtuala-b5b570dd5c1f-illustration.svg",
+    "question": "Ce este o imagine virtuală?",
+    "short_answer": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate.",
+    "explanation": "Imaginea virtuală este reprezentată de traseul imaginii obținut la intersecția prelungirilor raze- S lor reflectate.",
+    "visual_plan": {
+      "layout": "simplu",
+      "question": "Ce este o imagine virtuală?",
+      "is_definition": true,
+      "short_answer": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate.",
+      "subtipo": "",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "S",
+          "nume": "sursă",
+          "reprezentare": "un punct luminos",
+          "emoji": "💡",
+          "culoare": "#2F5D9B"
+        },
+        {
+          "simbol": "I",
+          "nume": "imagine virtuală",
+          "reprezentare": "traseul imaginii",
+          "emoji": "📷",
+          "culoare": "#D85F4A"
+        }
+      ],
+      "operatori": [],
+      "explicatie_vizuala": "Imaginea virtuală este reprezentată de traseul imaginii obținut la intersecția prelungirilor raze- S lor reflectate.",
+      "concept": "imagine virtuală",
+      "definitie_scurta": "Imaginea obținută la intersecția prelungirilor raze- S lor reflectate se numește imagine virtuală."
+    }
+  }
+]

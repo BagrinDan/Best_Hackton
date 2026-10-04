@@ -1,0 +1,140 @@
+[
+  {
+    "term": "reflexie",
+    "definition": "Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine se numește reflexie a luminii.",
+    "quote": "Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine se numește reflexie a luminii.",
+    "page": 8,
+    "image": "reflexie-3771ef58b692.svg",
+    "illustration": "reflexie-3771ef58b692-illustration.svg",
+    "question": "Ce se numește schimbarea direcției de propagare a luminoasă?",
+    "short_answer": "Schimbarea direcției de propagare",
+    "explanation": "Linia întoarcere este demonstrată pentru exemplu, indicând schimbarea direcției de propagare a luminoasă.",
+    "visual_plan": {
+      "layout": "simplu",
+      "question": "Ce se numește schimbarea direcției de propagare a luminoasă?",
+      "is_definition": true,
+      "short_answer": "Schimbarea direcției de propagare",
+      "subtipo": "unghi_incidenta",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "L",
+          "nume": "Luminoasă",
+          "reprezentare": "fișetul luminos",
+          "emoji": "💡",
+          "culoare": "#A77920"
+        },
+        {
+          "simbol": "S1",
+          "nume": "Suprafață de separație",
+          "reprezentare": "linia întoarcere",
+          "emoji": "↔️",
+          "culoare": "#2F5D9B"
+        },
+        {
+          "simbol": "S2",
+          "nume": "Suprafață de separație",
+          "reprezentare": "linia întoarcere",
+          "emoji": "↔️",
+          "culoare": "#2F5D9B"
+        },
+        {
+          "simbol": "L1",
+          "nume": "Luminoasă",
+          "reprezentare": "fișetul luminos",
+          "emoji": "💡",
+          "culoare": "#A77920"
+        }
+      ],
+      "operatori": [],
+      "explicatie_vizuala": "Linia întoarcere este demonstrată pentru exemplu, indicând schimbarea direcției de propagare a luminoasă.",
+      "concept": "reflexie",
+      "definitie_scurta": "Schimbarea direcției de propagare rectilinie a luminii la suprafața de separație a două medii prin întoarcerea ei în mediul din care vine se numește reflexie a luminii."
+    }
+  },
+  {
+    "term": "oglindă plană",
+    "definition": "Suprafața plană, netedă și lucioasă care reflectă bine lumina se numește oglindă plană.",
+    "quote": "Suprafața plană, netedă și lucioasă care reflectă bine lumina se numește oglindă plană.",
+    "page": 8,
+    "image": "oglinda_plana-538aee5690c8.svg",
+    "illustration": "oglinda_plana-538aee5690c8-illustration.svg",
+    "question": "Ce este caracteristicile principale ale unei oghindă plană?",
+    "short_answer": "Suprafața plană, netedă și lucioasă care reflectă bine lumina",
+    "explanation": "Reprezintă o suprafață plană lucioasă care reflectă lumina.",
+    "visual_plan": {
+      "layout": "simplu",
+      "question": "Ce este caracteristicile principale ale unei oghindă plană?",
+      "is_definition": true,
+      "short_answer": "Suprafața plană, netedă și lucioasă care reflectă bine lumina",
+      "subtipo": "reflexie",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "O",
+          "nume": "Oghindă plană",
+          "reprezentare": "Mirror",
+          "emoji": "🪑",
+          "culoare": "#2F5D9B"
+        }
+      ],
+      "operatori": [],
+      "explicatie_vizuala": "Reprezintă o suprafață plană lucioasă care reflectă lumina.",
+      "concept": "oglindă plană",
+      "definitie_scurta": "Suprafața plană, netedă și lucioasă care reflectă bine lumina se numește oglindă plană."
+    }
+  },
+  {
+    "term": "unghi de incidență",
+    "definition": "Unghiul AOC, format de raza incidentă AO și perpendiculara OC, se numește unghi de incidenţă. În fig. 2 acesta este notat cu litera α („alfa”)",
+    "quote": "Unghiul AOC, format de raza incidentă AO și perpendiculara OC, se numește unghi de incidenţă. În fig. 2 acesta este notat cu litera α („alfa”)",
+    "page": 8,
+    "image": "unghi_de_incidenta-e7e6ba9c4e8c.svg",
+    "illustration": "unghi_de_incidenta-e7e6ba9c4e8c-illustration.svg",
+    "question": "Ce denotă unghiul de incidentă?",
+    "short_answer": "Unghiul AOC format de raza incidentă AO și perpendiculara OC",
+    "explanation": "Pentru a reprezenta unghiul de incidentă, se poate folosi o figură simplă care arată punctele A și O, perpendiculara OC și unghiul format între raza incidentă AO și perpendiculara OC.",
+    "visual_plan": {
+      "layout": "simplu",
+      "question": "Ce denotă unghiul de incidentă?",
+      "is_definition": true,
+      "short_answer": "Unghiul AOC format de raza incidentă AO și perpendiculara OC",
+      "subtipo": "unghi_incidenta",
+      "formula": "",
+      "elemente": [
+        {
+          "simbol": "A",
+          "nume": "",
+          "reprezentare": "Punctul A",
+          "emoji": "ᴬ",
+          "culoare": "#2F5D9B"
+        },
+        {
+          "simbol": "O",
+          "nume": "",
+          "reprezentare": "Punctul O",
+          "emoji": "ᴼ",
+          "culoare": "#A77920"
+        },
+        {
+          "simbol": "C",
+          "nume": "",
+          "reprezentare": "Perpendiculara OC",
+          "emoji": "⊥",
+          "culoare": "#D85F4A"
+        },
+        {
+          "simbol": "α",
+          "nume": "",
+          "reprezentare": "Unghiul de incidentă",
+          "emoji": "°",
+          "culoare": "#278467"
+        }
+      ],
+      "operatori": [],
+      "explicatie_vizuala": "Pentru a reprezenta unghiul de incidentă, se poate folosi o figură simplă care arată punctele A și O, perpendiculara OC și unghiul format între raza incidentă AO și perpendiculara OC.",
+      "concept": "unghi de incidență",
+      "definitie_scurta": "Unghiul AOC, format de raza incidentă AO și perpendiculara OC, se numește unghi de incidenţă. În fig. 2 acesta este notat cu litera α („alfa”)"
+    }
+  }
+]

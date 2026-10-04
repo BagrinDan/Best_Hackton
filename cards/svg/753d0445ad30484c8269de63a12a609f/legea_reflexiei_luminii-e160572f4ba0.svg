@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="738" xmlns="http://www.w3.org/2000/svg">
+    
+    <defs>
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFFFFF"/>
+            <stop offset="100%" style="stop-color:#F4F6F8"/>
+        </linearGradient>
+        <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#4A90E2"/>
+            <stop offset="100%" style="stop-color:#7B68EE"/>
+        </linearGradient>
+        <filter id="shadowSmall" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.15"/>
+        </filter>
+    </defs>
+    <rect width="900" height="100%" fill="url(#bgGrad)"/>
+    <rect x="0" y="0" width="900" height="130" fill="url(#headerGrad)"/>
+    <text x="450" y="65" text-anchor="middle" 
+          font-family="Arial, Helvetica, sans-serif" font-size="36" 
+          font-weight="bold" fill="#FFFFFF">
+        legea reflexiei luminii
+    </text>
+    
+    
+    
+    <defs>
+        <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+            <polygon points="0 0, 10 3, 0 6" fill="#E74C3C"/>
+        </marker>
+    </defs>
+    
+    <!-- Oglinda -->
+    <line x1="170" y1="440" x2="730" y2="440" 
+          stroke="#2C3E50" stroke-width="4"/>
+    
+    <!-- Normala -->
+    <line x1="450" y1="440" x2="450" y2="200" 
+          stroke="#7B68EE" stroke-width="3" stroke-dasharray="8,6"/>
+    <text x="462" y="210" font-family="Arial" font-size="14" font-weight="bold" fill="#7B68EE">
+        C
+    </text>
+    <text x="462" y="230" font-family="Arial" font-size="11" fill="#7B68EE">
+        normală
+    </text>
+    
+    <!-- Punct O -->
+    <circle cx="450" cy="440" r="6" fill="#2C3E50"/>
+    <text x="428" y="465" font-family="Arial" font-size="16" font-weight="bold" fill="#2C3E50">
+        O
+    </text>
+    
+    <!-- Raza reflectată -->
+    <line x1="450" y1="440" x2="650" y2="260" 
+          stroke="#E74C3C" stroke-width="5" marker-end="url(#arrowRed)"/>
+    <text x="655" y="250" font-family="Arial" font-size="16" font-weight="bold" fill="#E74C3C">
+        B
+    </text>
+    <text x="670" y="340" font-family="Arial" font-size="14" font-weight="bold" fill="#E74C3C">
+        rază reflectată
+    </text>
+    
+    <!-- Unghiul β EVIDENȚIAT mare -->
+    <path d="M 450 310 A 130 130 0 0 1 555 360" 
+          fill="#27AE60" fill-opacity="0.2" stroke="#27AE60" stroke-width="3"/>
+    <text x="495" y="345" font-family="Arial" font-size="36" font-weight="bold" fill="#27AE60">
+        β
+    </text>
+
+    
+    <rect x="50" y="560" width="800" height="68" rx="15"
+          fill="#E8F4FD" stroke="#4A90E2" stroke-width="2"/>
+<text x="450" y="587" text-anchor="middle" font-family="Arial" font-size="14" fill="#1A1A2E">Diagrama arată unghiurile de reflexie și incidente care sunt egale, demonstrând</text><text x="450" y="608" text-anchor="middle" font-family="Arial" font-size="14" fill="#1A1A2E">legătura lor.</text>
+    <rect x="50" y="643" width="800" height="65" rx="12" 
+          fill="#FFF9E6" stroke="#F4A261" stroke-width="2"/>
+    <text x="450" y="667" text-anchor="middle" 
+          font-family="Arial" font-size="13" font-weight="bold" fill="#E76F51">
+        📖 Definiție
+    </text>
+    <text x="450" y="689" text-anchor="middle" 
+          font-family="Arial" font-size="13" fill="#2C3E50">
+        Unghiul de reflexie β este egal cu unghiul de incidență α. &lt;β = &lt;α
+    </text>
+</svg>

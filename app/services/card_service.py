@@ -75,7 +75,7 @@ def parser_from_environment(**overrides) -> ParsingBook:
     load_dotenv(Path(__file__).resolve().parents[2] / ".env", override=False)
     provider = overrides.pop("backend", None) or os.getenv("LLM_BACKEND", "ollama")
     providers = {
-        "ollama": ("ollama", "http://localhost:11434", "", "qwen2.5-coder:7b"),
+        "ollama": ("ollama", "http://localhost:11434", "", "qwen2.5:3b"),
         "openrouter": ("openai", "https://openrouter.ai/api/v1", "OPENROUTER_API_KEY", ""),
         "groq": ("openai", "https://api.groq.com/openai/v1", "GROQ_API_KEY", ""),
         "openai": ("openai", "https://generativelanguage.googleapis.com/v1beta/openai", "LLM_API_KEY", ""),
